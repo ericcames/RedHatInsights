@@ -1,1 +1,1 @@
-# RedHatInsights
+# Red Hat Insights
