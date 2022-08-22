@@ -7,3 +7,6 @@
 [Red Hat Insights Ansible Collection](https://console.redhat.com/ansible/automation-hub/repo/published/redhat/insights/docs "Red Hat Insights Ansible Collection")
 
 ### Install Insights
+
+### Activate Automation Analytics and Red Hat Insights
+[Insights for Ansible Automation Platform](https://www.ansible.com/blog/activate-insights-for-ansible-automation-platform "Insights for Ansible Automation Platform")
