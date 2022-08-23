@@ -8,7 +8,7 @@
 
 ### Install Insights and registers the servers
 [Insights install and registration ansible playbook](https://github.com/ericcames/RedHatInsights/blob/main/insightsregistration.yml "Insights install and registration ansible playbook")  
-  **man insights-client.conf** for more details on how to configure Red Hat Insights client
+**man insights-client.conf** for more details on how to configure Red Hat Insights client
 
 ### Activate Automation Analytics and Red Hat Insights  
 [Insights for Ansible Automation Platform](https://www.ansible.com/blog/activate-insights-for-ansible-automation-platform "Insights for Ansible Automation Platform")
