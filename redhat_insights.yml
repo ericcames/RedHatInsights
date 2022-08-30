@@ -13,6 +13,7 @@
       name: 
         - insights-client
       state: "{{ status }}"
+    when: "{{ status }} != 'absent'"
   
   - name: "Making sure the server is {{ status }} in console.redhat.com"
     redhat.insights.insights_register:
