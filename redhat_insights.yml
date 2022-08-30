@@ -1,0 +1,19 @@
+---
+- name: Making sure the insights-client is properlly configured
+  hosts: all
+  gather_facts: no
+  
+  vars:
+    status: "{{ status }}"
+  
+  tasks:
+  
+  - name: "Making sure the insights-client is {{ status }} on this server"
+    ansible.builtin.yum:
+      name: 
+        - insights-client
+      state: "{{ status }}"
+  
+  - name: "Making sure the server is {{ status }} in console.redhat.com"
+    redhat.insights.insights_register:
+      state: "{{ status }}"
