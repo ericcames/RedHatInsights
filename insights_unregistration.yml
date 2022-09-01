@@ -12,6 +12,6 @@
         - insights-client
       state: present
   
-  - name: UN-Register the insights client
+  - name: UN-Register the insights client.
     redhat.insights.insights_register:
       state: absent
