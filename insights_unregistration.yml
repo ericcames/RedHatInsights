@@ -1,6 +1,6 @@
 ---
 - name: Installing and Registering Red Hat Insights on a server
-  hosts: all
+  hosts: "{{ my_server }}"
   become: yes
   gather_facts: no
   
