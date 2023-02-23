@@ -1,8 +1,7 @@
 ---
 - name: Making sure the insights-client is properlly configured
-  hosts: all
+  hosts: "{{ my_server }}"
   gather_facts: no
-  
   vars:
     status: "{{ status }}"
   
@@ -10,11 +9,11 @@
 
     # Gather the start time to use in a later playbook
     - name: Record the insights_time
-      ansible.builtin.command:
-        cmd: "date '+%H:%M:%S'"
       delegate_to: 127.0.0.1
       register: insights_time_pre
-
+      ansible.builtin.command:
+        cmd: "date '+%H:%M:%S'"
+      
     # Make the start time available to other playbooks
     - name: Capture the insights_time
       ansible.builtin.set_stats:
