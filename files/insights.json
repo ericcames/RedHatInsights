@@ -1,0 +1,137 @@
+{
+    "content": "{\"total\":1,\"count\":1,\"page\":1,\"per_page\":50,\"results\":[{\"insights_id\":\"11767fe3-5cf5-4f85-9383-d4357449a718\",\"subscription_manager_id\":\"400d95ec-be64-4714-ae7e-b150555a0097\",\"satellite_id\":null,\"bios_uuid\":\"cfb14d56-657a-fb64-f362-81e11411de39\",\"ip_addresses\":[\"172.16.1.8\"],\"fqdn\":\"db.internal.ames.net\",\"mac_addresses\":[\"00:0c:29:11:de:39\",\"00:00:00:00:00:00\"],\"provider_id\":null,\"provider_type\":null,\"id\":\"3238a9aa-2d4e-4e15-aa71-0bf296196d4c\",\"account\":\"9249047\",\"org_id\":\"15936918\",\"display_name\":\"db.internal.ames.net\",\"ansible_host\":null,\"facts\":[{\"namespace\":\"rhsm\",\"facts\":{\"SYNC_TIMESTAMP\":\"2023-03-23T00:57:26.154527483Z\",\"IS_VIRTUAL\":true,\"MEMORY\":2,\"ARCHITECTURE\":\"x86_64\",\"RH_PROD\":[\"69\"],\"orgId\":\"15936918\"}}],\"reporter\":\"puptoo\",\"per_reporter_staleness\":{\"rhsm-conduit\":{\"check_in_succeeded\":true,\"stale_timestamp\":\"2023-03-25T00:57:26.154527+00:00\",\"last_check_in\":\"2023-03-23T02:32:16.785659+00:00\"},\"puptoo\":{\"check_in_succeeded\":true,\"stale_timestamp\":\"2023-03-24T14:52:57.173422+00:00\",\"last_check_in\":\"2023-03-23T09:52:57.453774+00:00\"}},\"stale_timestamp\":\"2023-03-24T14:52:57.173422+00:00\",\"stale_warning_timestamp\":\"2023-03-31T14:52:57.173422+00:00\",\"culled_timestamp\":\"2023-04-07T14:52:57.173422+00:00\",\"created\":\"2023-02-11T01:08:50.038277+00:00\",\"updated\":\"2023-03-23T09:52:57.454062+00:00\"}]}",
+    "redirected": false,
+    "url": "https://console.redhat.com/api/inventory/v1/hosts?display_name=db.internal.ames.net",
+    "status": 200,
+    "server": "openresty",
+    "content_type": "application/json",
+    "content_length": "1320",
+    "x_rh_insights_request_id": "4dd70ed496ea437dbdbf977bc1e82266",
+    "x_content_type_options": "nosniff",
+    "cache_control": "private",
+    "date": "Thu, 23 Mar 2023 23:53:18 GMT",
+    "connection": "close",
+    "set_cookie": "b3e2e456866f84f3604b36899c8be8b3=aead60ca13504b9091f820163e933ba7; path=/; HttpOnly; Secure; SameSite=None",
+    "x_rh_edge_request_id": "2f19bae9",
+    "x_rh_edge_reference_id": "0.79cfdb17.1679615598.2f19bae9",
+    "x_rh_edge_cache_status": "Miss from child, Miss from parent",
+    "x_frame_options": "SAMEORIGIN",
+    "strict_transport_security": "max-age=31536000; includeSubDomains",
+    "cookies_string": "b3e2e456866f84f3604b36899c8be8b3=aead60ca13504b9091f820163e933ba7",
+    "cookies": {
+      "b3e2e456866f84f3604b36899c8be8b3": "aead60ca13504b9091f820163e933ba7"
+    },
+    "msg": "OK (1320 bytes)",
+    "elapsed": 1,
+    "changed": false,
+    "json": {
+      "total": 1,
+      "count": 1,
+      "page": 1,
+      "per_page": 50,
+      "results": [
+        {
+          "insights_id": "11767fe3-5cf5-4f85-9383-d4357449a718",
+          "subscription_manager_id": "400d95ec-be64-4714-ae7e-b150555a0097",
+          "satellite_id": null,
+          "bios_uuid": "cfb14d56-657a-fb64-f362-81e11411de39",
+          "ip_addresses": [
+            "172.16.1.8"
+          ],
+          "fqdn": "db.internal.ames.net",
+          "mac_addresses": [
+            "00:0c:29:11:de:39",
+            "00:00:00:00:00:00"
+          ],
+          "provider_id": null,
+          "provider_type": null,
+          "id": "3238a9aa-2d4e-4e15-aa71-0bf296196d4c",
+          "account": "9249047",
+          "org_id": "15936918",
+          "display_name": "db.internal.ames.net",
+          "ansible_host": null,
+          "facts": [
+            {
+              "namespace": "rhsm",
+              "facts": {
+                "SYNC_TIMESTAMP": "2023-03-23T00:57:26.154527483Z",
+                "IS_VIRTUAL": true,
+                "MEMORY": 2,
+                "ARCHITECTURE": "x86_64",
+                "RH_PROD": [
+                  "69"
+                ],
+                "orgId": "15936918"
+              }
+            }
+          ],
+          "reporter": "puptoo",
+          "per_reporter_staleness": {
+            "rhsm-conduit": {
+              "check_in_succeeded": true,
+              "stale_timestamp": "2023-03-25T00:57:26.154527+00:00",
+              "last_check_in": "2023-03-23T02:32:16.785659+00:00"
+            },
+            "puptoo": {
+              "check_in_succeeded": true,
+              "stale_timestamp": "2023-03-24T14:52:57.173422+00:00",
+              "last_check_in": "2023-03-23T09:52:57.453774+00:00"
+            }
+          },
+          "stale_timestamp": "2023-03-24T14:52:57.173422+00:00",
+          "stale_warning_timestamp": "2023-03-31T14:52:57.173422+00:00",
+          "culled_timestamp": "2023-04-07T14:52:57.173422+00:00",
+          "created": "2023-02-11T01:08:50.038277+00:00",
+          "updated": "2023-03-23T09:52:57.454062+00:00"
+        }
+      ]
+    },
+    "invocation": {
+      "module_args": {
+        "url": "https://console.redhat.com/api/inventory/v1/hosts?display_name=db.internal.ames.net",
+        "method": "GET",
+        "user": "zigfreed",
+        "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
+        "validate_certs": false,
+        "force_basic_auth": true,
+        "status_code": [
+          200
+        ],
+        "return_content": true,
+        "unsafe_writes": true,
+        "url_username": "zigfreed",
+        "url_password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
+        "force": false,
+        "http_agent": "ansible-httpget",
+        "use_proxy": true,
+        "use_gssapi": false,
+        "body_format": "raw",
+        "follow_redirects": "safe",
+        "timeout": 30,
+        "headers": {},
+        "remote_src": false,
+        "unredirected_headers": [],
+        "client_cert": null,
+        "client_key": null,
+        "dest": null,
+        "body": null,
+        "src": null,
+        "creates": null,
+        "removes": null,
+        "unix_socket": null,
+        "ca_path": null,
+        "mode": null,
+        "owner": null,
+        "group": null,
+        "seuser": null,
+        "serole": null,
+        "selevel": null,
+        "setype": null,
+        "attributes": null
+      }
+    },
+    "warnings": [
+      "Module did not set no_log for password"
+    ],
+    "_ansible_no_log": false
+  }
