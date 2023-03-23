@@ -29,3 +29,4 @@
     - name: "Making sure the server is {{ status }} in console.redhat.com"
       redhat.insights.insights_register:
         state: "{{ status }}"
+        display_name: "{{ my_server }}"
