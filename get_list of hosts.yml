@@ -1,0 +1,19 @@
+---
+  - name: Get the list of hosts registered in Insights
+    hosts: localhost
+    connection: local
+    gather_facts: no
+
+    tasks:
+
+    - name: Get my list
+      register: my_host_list
+      ansible.builtin.uri:
+        url: "https://console.redhat.com/api/inventory/v1/hosts"
+        method: POST
+        user: "{{ insights_username }}"
+        password: "{{ insights_password }}"
+        validate_certs: no
+        force_basic_auth: yes
+        status_code: 200
+        return_content: yes 
