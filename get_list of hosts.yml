@@ -18,10 +18,10 @@
         status_code: 200
         return_content: yes 
 
-    - name: Create insights_id dictionary
-      ansible.builtin.set_fact:
-        my_insights_ids: "{{ insights_id | json_query('insights_id') }}"
+    #- name: Create insights_id dictionary
+    #  ansible.builtin.set_fact:
+    #    my_insights_ids: "{{ insights_id | json_query('insights_id') }}"
 
     - name: Print out my_insights_ids
       ansible.builtin.debug:
-        msg: "{{ my_insights_ids }}"
+        msg: "{{ my_host_list.json.results.insights_id }}"
