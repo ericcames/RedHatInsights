@@ -17,3 +17,7 @@
         force_basic_auth: yes
         status_code: 200
         return_content: yes 
+
+    - name: Print my_host_list
+      ansible.builtin.debug:
+        var: my_host_list
