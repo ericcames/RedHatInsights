@@ -20,4 +20,4 @@
 
     - name: Print my_host_list
       ansible.builtin.debug:
-        var: my_host_list
+        var: my_host_list.insights_id
