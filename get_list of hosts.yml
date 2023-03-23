@@ -20,4 +20,4 @@
 
     - name: Print my_host_list
       ansible.builtin.debug:
-        msg: my_host_list.content[0].insights_id
+        msg: "{{ my_host_list.content[0].insights_id }}"
