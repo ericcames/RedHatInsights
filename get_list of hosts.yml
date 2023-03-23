@@ -9,7 +9,7 @@
     - name: Get my list
       register: my_host_list
       ansible.builtin.uri:
-        url: "https://console.redhat.com/api/inventory/v1/hosts"
+        url: "https://console.redhat.com/api/inventory/v1/hosts?display_name={{ my_server }}"
         method: GET
         user: "{{ insights_username }}"
         password: "{{ insights_password }}"
