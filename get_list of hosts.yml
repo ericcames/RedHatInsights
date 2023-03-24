@@ -8,6 +8,7 @@
 
     - name: Get my list
       register: my_host_list
+      ignore_errors: true
       ansible.builtin.uri:
         url: "https://console.redhat.com/api/inventory/v1/hosts?display_name={{ my_server }}"
         method: GET
@@ -17,12 +18,9 @@
         force_basic_auth: yes
         status_code: 200
         return_content: yes 
-
-    #- name: Create insights_id dictionary
-    #  ansible.builtin.set_fact:
-    #    my_insights_ids: "{{ insights_id | json_query('insights_id') }}"
+        headers:
+          Content-Type: "application/json"
 
     - name: Print out my_insights_ids
-      loop: "{{ my_host_list | subelements('results') }}"
       ansible.builtin.debug:
-        msg: "{{ item.1.insights_id }}"
+        msg: "{{ my_host_list }}"
