@@ -23,6 +23,6 @@
     #    my_insights_ids: "{{ insights_id | json_query('insights_id') }}"
 
     - name: Print out my_insights_ids
-      loop: "{{ my_host_list | subelements('results') }}"
+      loop: "{{ my_host_list | subelements('json.results') }}"
       ansible.builtin.debug:
         msg: "{{ item.1.insights_id }}"
