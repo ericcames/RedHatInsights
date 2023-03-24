@@ -27,4 +27,4 @@
 
     - name: my insights id 
       ansible.builtin.set_fact:
-        insights_id="{{ my_host_list.content | from_json | json_query('insights_id') }}"
+        insights_id="{{ my_host_list.content | from_json | community.general.json_query('insights_id') }}"
