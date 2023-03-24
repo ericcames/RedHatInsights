@@ -23,8 +23,4 @@
 
     - name: Print out my_insights_ids
       ansible.builtin.debug:
-        msg: "{{ my_host_list.json.results[0].insights_id }}"
-
-    - name: my insights id 
-      ansible.builtin.set_fact:
-        insights_id="{{ my_host_list.content | from_json | community.general.json_query('insights_id') }}"
+        msg: "{{ my_host_list.json.results[0].id }}"
