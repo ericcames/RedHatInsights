@@ -23,7 +23,7 @@
 
     - name: Print out my_insights_ids
       ansible.builtin.debug:
-        msg: "{{ my_host_list.json | list }}"
+        msg: "{{ my_host_list.json.results.insights_id }}"
 
     - name: my insights id 
       ansible.builtin.set_fact:
