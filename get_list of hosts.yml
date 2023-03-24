@@ -23,4 +23,4 @@
 
     - name: Print out my_insights_ids
       ansible.builtin.debug:
-        msg: "{{ my_host_list }}"
+        msg: "{{ my_host_list.json | list }}"
