@@ -10,7 +10,7 @@
       register: my_host_list
       ignore_errors: true
       ansible.builtin.uri:
-        url: "https://console.redhat.com/api/inventory/v1/hosts?display_name={{ my_server }}"
+        url: "https://console.redhat.com/api/inventory/v1/hosts?display_name={{ my_private_dns_name }}"
         method: GET
         user: "{{ insights_username }}"
         password: "{{ insights_password }}"
