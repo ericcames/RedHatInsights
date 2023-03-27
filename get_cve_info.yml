@@ -1,0 +1,22 @@
+---
+  - name: Get the list of CVEs related to the server
+    hosts: localhost
+    connection: local
+    gather_facts: no
+
+    tasks:
+
+    - name: Get my list of CVEs
+      register: my_cve_list
+      ignore_errors: true
+      ansible.builtin.uri:
+        url: "https://console.redhat.com/api/vulnerability/v1/systems/{{ my_insights_inventory_id }}/cves"
+        method: GET
+        user: "{{ insights_username }}"
+        password: "{{ insights_password }}"
+        validate_certs: no
+        force_basic_auth: yes
+        status_code: 200
+        return_content: yes 
+        headers:
+          Content-Type: "application/json"
