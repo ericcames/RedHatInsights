@@ -1,0 +1,20 @@
+---
+- name: Update the change ticket work notes
+  hosts: localhost
+  gather_facts: no
+  
+  tasks: 
+  
+    - name: Retrieve change ticket sys_id
+      register: chg_sys_id
+      servicenow.itsm.api_info:
+        resource: change_request
+        sysparm_query: numberSTARTSWITH{{ ticket_number }}
+
+    - name: Update the change ticket work notes
+      servicenow.itsm.api:
+        action: patch
+        resource: change_request
+        sys_id: "{{ chg_sys_id.record[0].sys_id }}"
+        data:
+          work_notes: "hello world"
