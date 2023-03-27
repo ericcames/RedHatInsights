@@ -1,98 +1,307 @@
 {
-    "msg": {
-      "content": "{\"total\":1,\"count\":1,\"page\":1,\"per_page\":50,\"results\":[{\"insights_id\":\"11767fe3-5cf5-4f85-9383-d4357449a718\",\"subscription_manager_id\":\"400d95ec-be64-4714-ae7e-b150555a0097\",\"satellite_id\":null,\"bios_uuid\":\"cfb14d56-657a-fb64-f362-81e11411de39\",\"ip_addresses\":[\"172.16.1.8\"],\"fqdn\":\"db.internal.ames.net\",\"mac_addresses\":[\"00:0c:29:11:de:39\",\"00:00:00:00:00:00\"],\"provider_id\":null,\"provider_type\":null,\"id\":\"3238a9aa-2d4e-4e15-aa71-0bf296196d4c\",\"account\":\"9249047\",\"org_id\":\"15936918\",\"display_name\":\"db.internal.ames.net\",\"ansible_host\":null,\"facts\":[{\"namespace\":\"rhsm\",\"facts\":{\"SYNC_TIMESTAMP\":\"2023-03-23T00:57:26.154527483Z\",\"IS_VIRTUAL\":true,\"MEMORY\":2,\"ARCHITECTURE\":\"x86_64\",\"RH_PROD\":[\"69\"],\"orgId\":\"15936918\"}}],\"reporter\":\"puptoo\",\"per_reporter_staleness\":{\"rhsm-conduit\":{\"check_in_succeeded\":true,\"stale_timestamp\":\"2023-03-25T00:57:26.154527+00:00\",\"last_check_in\":\"2023-03-23T02:32:16.785659+00:00\"},\"puptoo\":{\"check_in_succeeded\":true,\"stale_timestamp\":\"2023-03-24T14:52:57.173422+00:00\",\"last_check_in\":\"2023-03-23T09:52:57.453774+00:00\"}},\"stale_timestamp\":\"2023-03-24T14:52:57.173422+00:00\",\"stale_warning_timestamp\":\"2023-03-31T14:52:57.173422+00:00\",\"culled_timestamp\":\"2023-04-07T14:52:57.173422+00:00\",\"created\":\"2023-02-11T01:08:50.038277+00:00\",\"updated\":\"2023-03-23T09:52:57.454062+00:00\"}]}",
-      "redirected": false,
-      "url": "https://console.redhat.com/api/inventory/v1/hosts?display_name=db.internal.ames.net",
-      "status": 200,
-      "server": "openresty",
-      "content_type": "application/json",
-      "content_length": "1320",
-      "x_rh_insights_request_id": "a1d431a0ac15442cbee7fb5b35c12157",
-      "x_content_type_options": "nosniff",
-      "cache_control": "private",
-      "date": "Fri, 24 Mar 2023 00:20:35 GMT",
-      "connection": "close",
-      "set_cookie": "b3e2e456866f84f3604b36899c8be8b3=aead60ca13504b9091f820163e933ba7; path=/; HttpOnly; Secure; SameSite=None",
-      "x_rh_edge_request_id": "2f5988fd",
-      "x_rh_edge_reference_id": "0.79cfdb17.1679617235.2f5988fd",
-      "x_rh_edge_cache_status": "Miss from child, Miss from parent",
-      "x_frame_options": "SAMEORIGIN",
-      "strict_transport_security": "max-age=31536000; includeSubDomains",
-      "cookies_string": "b3e2e456866f84f3604b36899c8be8b3=aead60ca13504b9091f820163e933ba7",
-      "cookies": {
-        "b3e2e456866f84f3604b36899c8be8b3": "aead60ca13504b9091f820163e933ba7"
-      },
-      "msg": "OK (1320 bytes)",
-      "elapsed": 1,
-      "changed": false,
-      "json": {
-        "total": 1,
-        "count": 1,
-        "page": 1,
-        "per_page": 50,
-        "results": [
-          {
-            "insights_id": "11767fe3-5cf5-4f85-9383-d4357449a718",
-            "subscription_manager_id": "400d95ec-be64-4714-ae7e-b150555a0097",
-            "satellite_id": null,
-            "bios_uuid": "cfb14d56-657a-fb64-f362-81e11411de39",
-            "ip_addresses": [
-              "172.16.1.8"
-            ],
-            "fqdn": "db.internal.ames.net",
-            "mac_addresses": [
-              "00:0c:29:11:de:39",
-              "00:00:00:00:00:00"
-            ],
-            "provider_id": null,
-            "provider_type": null,
-            "id": "3238a9aa-2d4e-4e15-aa71-0bf296196d4c",
-            "account": "9249047",
-            "org_id": "15936918",
-            "display_name": "db.internal.ames.net",
-            "ansible_host": null,
-            "facts": [
-              {
-                "namespace": "rhsm",
-                "facts": {
-                  "SYNC_TIMESTAMP": "2023-03-23T00:57:26.154527483Z",
-                  "IS_VIRTUAL": true,
-                  "MEMORY": 2,
-                  "ARCHITECTURE": "x86_64",
-                  "RH_PROD": [
-                    "69"
-                  ],
-                  "orgId": "15936918"
-                }
-              }
-            ],
-            "reporter": "puptoo",
-            "per_reporter_staleness": {
-              "rhsm-conduit": {
-                "check_in_succeeded": true,
-                "stale_timestamp": "2023-03-25T00:57:26.154527+00:00",
-                "last_check_in": "2023-03-23T02:32:16.785659+00:00"
-              },
-              "puptoo": {
-                "check_in_succeeded": true,
-                "stale_timestamp": "2023-03-24T14:52:57.173422+00:00",
-                "last_check_in": "2023-03-23T09:52:57.453774+00:00"
-              }
-            },
-            "stale_timestamp": "2023-03-24T14:52:57.173422+00:00",
-            "stale_warning_timestamp": "2023-03-31T14:52:57.173422+00:00",
-            "culled_timestamp": "2023-04-07T14:52:57.173422+00:00",
-            "created": "2023-02-11T01:08:50.038277+00:00",
-            "updated": "2023-03-23T09:52:57.454062+00:00"
-          }
-        ]
-      },
-      "warnings": [
-        "Module did not set no_log for password"
-      ],
-      "failed": false
+    "content": "{\n  \"data\": [\n    {\n      \"attributes\": {\n        \"advisories_list\": [],\n        \"advisory_available\": false,\n        \"business_risk\": \"Not Defined\",\n        \"business_risk_id\": 0,\n        \"business_risk_text\": null,\n        \"cve_status_id\": 0,\n        \"cve_status_text\": null,\n        \"cvss2_score\": null,\n        \"cvss3_score\": \"6.500\",\n        \"description\": \"Microprocessors use a \\u2018load port\\u2019 subcomponent to perform load operations from memory or IO. During a load operation, the load port receives data from the memory or IO subsystem and then provides the data to the CPU registers and operations in the CPU\\u2019s pipelines. Stale load operations results are stored in the 'load port' table until overwritten by newer operations. Certain load-port operations triggered by an attacker can be used to reveal data about previous stale requests leaking data back to the attacker via a timing side-channel.\",\n        \"first_reported\": \"2023-03-27T22:19:34.874054+00:00\",\n        \"impact\": \"Moderate\",\n        \"known_exploit\": false,\n        \"public_date\": \"2019-05-14T17:00:00+00:00\",\n        \"remediation\": 2,\n        \"reporter\": 2,\n        \"rule\": {\n          \"change_risk\": 3,\n          \"description\": \"\\\"MDS\\\": CPU side-channel reported by kernel\",\n          \"generate_autoplaybook\": true,\n          \"kbase_node_id\": 4134081,\n          \"playbook_count\": 1,\n          \"reboot_required\": true,\n          \"rule_id\": \"CVE_2018_12130_cpu_kernel|CVE_2018_12130_CPU_KERNEL_VULNERABLE_2\",\n          \"summary\": \"The kernel reports this system is vulnerable.\\n\"\n        },\n        \"status\": \"Not Reviewed\",\n        \"status_id\": 0,\n        \"status_text\": null,\n        \"synopsis\": \"CVE-2018-12127\"\n      },\n      \"id\": \"CVE-2018-12127\",\n      \"type\": \"cve\"\n    },\n    {\n      \"attributes\": {\n        \"advisories_list\": [],\n        \"advisory_available\": false,\n        \"business_risk\": \"Not Defined\",\n        \"business_risk_id\": 0,\n        \"business_risk_text\": null,\n        \"cve_status_id\": 0,\n        \"cve_status_text\": null,\n        \"cvss2_score\": null,\n        \"cvss3_score\": \"6.200\",\n        \"description\": \"A flaw was found in the implementation of the \\\"fill buffer\\\", a mechanism used by modern CPUs when a cache-miss is made on L1 CPU cache. If an attacker can generate a load operation that would create a page fault, the execution will continue speculatively with incorrect data from the fill buffer while the data is fetched from higher level caches. This response time can be measured to infer data in the fill buffer.\",\n        \"first_reported\": \"2023-03-27T22:19:34.874054+00:00\",\n        \"impact\": \"Important\",\n        \"known_exploit\": false,\n        \"public_date\": \"2019-05-14T17:00:00+00:00\",\n        \"remediation\": 2,\n        \"reporter\": 2,\n        \"rule\": {\n          \"change_risk\": 3,\n          \"description\": \"\\\"MDS\\\": CPU side-channel reported by kernel\",\n          \"generate_autoplaybook\": true,\n          \"kbase_node_id\": 4134081,\n          \"playbook_count\": 1,\n          \"reboot_required\": true,\n          \"rule_id\": \"CVE_2018_12130_cpu_kernel|CVE_2018_12130_CPU_KERNEL_VULNERABLE_2\",\n          \"summary\": \"The kernel reports this system is vulnerable.\\n\"\n        },\n        \"status\": \"Not Reviewed\",\n        \"status_id\": 0,\n        \"status_text\": null,\n        \"synopsis\": \"CVE-2018-12130\"\n      },\n      \"id\": \"CVE-2018-12130\",\n      \"type\": \"cve\"\n    },\n    {\n      \"attributes\": {\n        \"advisories_list\": [],\n        \"advisory_available\": false,\n        \"business_risk\": \"Not Defined\",\n        \"business_risk_id\": 0,\n        \"business_risk_text\": null,\n        \"cve_status_id\": 0,\n        \"cve_status_text\": null,\n        \"cvss2_score\": null,\n        \"cvss3_score\": \"6.500\",\n        \"description\": \"Modern Intel microprocessors implement hardware-level micro-optimizations to improve the performance of writing data back to CPU caches. The write operation is split into STA (STore Address) and STD (STore Data) sub-operations. These sub-operations allow the processor to hand-off address generation logic into these sub-operations for optimized writes. Both of these sub-operations write to a shared distributed processor structure called the 'processor store buffer'. As a result, an unprivileged attacker could use this flaw to read private data resident within the CPU's processor store buffer.\",\n        \"first_reported\": \"2023-03-27T22:19:34.874054+00:00\",\n        \"impact\": \"Moderate\",\n        \"known_exploit\": false,\n        \"public_date\": \"2019-05-14T17:00:00+00:00\",\n        \"remediation\": 2,\n        \"reporter\": 2,\n        \"rule\": {\n          \"change_risk\": 3,\n          \"description\": \"\\\"MDS\\\": CPU side-channel reported by kernel\",\n          \"generate_autoplaybook\": true,\n          \"kbase_node_id\": 4134081,\n          \"playbook_count\": 1,\n          \"reboot_required\": true,\n          \"rule_id\": \"CVE_2018_12130_cpu_kernel|CVE_2018_12130_CPU_KERNEL_VULNERABLE_2\",\n          \"summary\": \"The kernel reports this system is vulnerable.\\n\"\n        },\n        \"status\": \"Not Reviewed\",\n        \"status_id\": 0,\n        \"status_text\": null,\n        \"synopsis\": \"CVE-2018-12126\"\n      },\n      \"id\": \"CVE-2018-12126\",\n      \"type\": \"cve\"\n    },\n    {\n      \"attributes\": {\n        \"advisories_list\": [],\n        \"advisory_available\": false,\n        \"business_risk\": \"Not Defined\",\n        \"business_risk_id\": 0,\n        \"business_risk_text\": null,\n        \"cve_status_id\": 0,\n        \"cve_status_text\": null,\n        \"cvss2_score\": null,\n        \"cvss3_score\": \"3.800\",\n        \"description\": \"Uncacheable memory on some microprocessors utilizing speculative execution may allow an authenticated user to potentially enable information disclosure via a side channel with local access.\",\n        \"first_reported\": \"2023-03-27T22:19:34.874054+00:00\",\n        \"impact\": \"Moderate\",\n        \"known_exploit\": false,\n        \"public_date\": \"2019-05-14T17:00:00+00:00\",\n        \"remediation\": 2,\n        \"reporter\": 2,\n        \"rule\": {\n          \"change_risk\": 3,\n          \"description\": \"\\\"MDS\\\": CPU side-channel reported by kernel\",\n          \"generate_autoplaybook\": true,\n          \"kbase_node_id\": 4134081,\n          \"playbook_count\": 1,\n          \"reboot_required\": true,\n          \"rule_id\": \"CVE_2018_12130_cpu_kernel|CVE_2018_12130_CPU_KERNEL_VULNERABLE_2\",\n          \"summary\": \"The kernel reports this system is vulnerable.\\n\"\n        },\n        \"status\": \"Not Reviewed\",\n        \"status_id\": 0,\n        \"status_text\": null,\n        \"synopsis\": \"CVE-2019-11091\"\n      },\n      \"id\": \"CVE-2019-11091\",\n      \"type\": \"cve\"\n    },\n    {\n      \"attributes\": {\n        \"advisories_list\": [],\n        \"advisory_available\": false,\n        \"business_risk\": \"Not Defined\",\n        \"business_risk_id\": 0,\n        \"business_risk_text\": null,\n        \"cve_status_id\": 0,\n        \"cve_status_text\": null,\n        \"cvss2_score\": null,\n        \"cvss3_score\": \"5.600\",\n        \"description\": \"An industry-wide issue was found in the way many modern microprocessor designs have implemented speculative execution of Load & Store instructions (a commonly used performance optimization). It relies on the presence of a precisely-defined instruction sequence in the privileged code as well as the fact that memory read from address to which a recent memory write has occurred may see an older value and subsequently cause an update into the microprocessor's data cache even for speculatively executed instructions that never actually commit (retire). As a result, an unprivileged attacker could use this flaw to read privileged memory by conducting targeted cache side-channel attacks.\",\n        \"first_reported\": \"2023-03-27T22:19:34.874054+00:00\",\n        \"impact\": \"Important\",\n        \"known_exploit\": false,\n        \"public_date\": \"2018-05-21T21:00:00+00:00\",\n        \"remediation\": 1,\n        \"reporter\": 2,\n        \"rule\": {\n          \"change_risk\": 3,\n          \"description\": \"\\\"SSBD\\\": CPU side-channel with outdated microcode\",\n          \"generate_autoplaybook\": true,\n          \"kbase_node_id\": 3448801,\n          \"playbook_count\": 0,\n          \"reboot_required\": true,\n          \"rule_id\": \"CVE_2018_3639_cpu_kernel|CVE_2018_3639_CPU_BAD_MICROCODE_2\",\n          \"summary\": \"Vulnerable microcode is installed.\\n\"\n        },\n        \"status\": \"Not Reviewed\",\n        \"status_id\": 0,\n        \"status_text\": null,\n        \"synopsis\": \"CVE-2018-3639\"\n      },\n      \"id\": \"CVE-2018-3639\",\n      \"type\": \"cve\"\n    }\n  ],\n  \"links\": {\n    \"first\": \"/api/vulnerability/v1/systems/fdd60153-4902-4f54-b666-d9ea40643011/cves?offset=0&limit=20&data_format=json\",\n    \"last\": \"/api/vulnerability/v1/systems/fdd60153-4902-4f54-b666-d9ea40643011/cves?offset=0&limit=20&data_format=json\",\n    \"next\": null,\n    \"previous\": null\n  },\n  \"meta\": {\n    \"advisory\": null,\n    \"advisory_available\": null,\n    \"business_risk_id\": null,\n    \"cvss_from\": null,\n    \"cvss_to\": null,\n    \"data_format\": \"json\",\n    \"filter\": null,\n    \"first_reported_from\": null,\n    \"first_reported_to\": null,\n    \"impact\": null,\n    \"known_exploit\": null,\n    \"limit\": 20,\n    \"offset\": 0,\n    \"page\": 1,\n    \"page_size\": 20,\n    \"pages\": 1,\n    \"patch_access\": true,\n    \"permissions\": [\n      \"inventory:*:*\",\n      \"remediations:remediation:read\",\n      \"remediations:remediation:write\",\n      \"vulnerability:*:*\",\n      \"remediations:*:write\",\n      \"inventory:*:read\",\n      \"remediations:*:read\"\n    ],\n    \"public_from\": null,\n    \"public_to\": null,\n    \"remediation\": null,\n    \"rule_key\": null,\n    \"rule_presence\": null,\n    \"show_advisories\": null,\n    \"sort\": null,\n    \"status_id\": null,\n    \"total_items\": 5\n  }\n}\n",
+    "redirected": false,
+    "url": "https://console.redhat.com/api/vulnerability/v1/systems/fdd60153-4902-4f54-b666-d9ea40643011/cves",
+    "status": 200,
+    "server": "openresty",
+    "content_type": "application/vnd.api+json",
+    "content_length": "9627",
+    "x_rh_insights_request_id": "e7f905bb887e4f7795e535fb411f8268",
+    "access_control_allow_origin": "*",
+    "access_control_allow_headers": "Content-Type, Access-Control-Allow-Headers,             Authorization, X-Requested-With, x-rh-identity",
+    "access_control_allow_methods": "GET, OPTIONS, PATCH, POST",
+    "x_content_type_options": "nosniff",
+    "cache_control": "private",
+    "date": "Mon, 27 Mar 2023 22:21:10 GMT",
+    "connection": "close",
+    "set_cookie": "b3e2e456866f84f3604b36899c8be8b3=00710a289f870f8470d9c8b8623a8571; path=/; HttpOnly; Secure; SameSite=None",
+    "x_rh_edge_request_id": "d57dd7a",
+    "x_rh_edge_reference_id": "0.79cfdb17.1679955670.d57dd7a",
+    "x_rh_edge_cache_status": "Miss from child, Miss from parent",
+    "x_frame_options": "SAMEORIGIN",
+    "strict_transport_security": "max-age=31536000; includeSubDomains",
+    "cookies_string": "b3e2e456866f84f3604b36899c8be8b3=00710a289f870f8470d9c8b8623a8571",
+    "cookies": {
+      "b3e2e456866f84f3604b36899c8be8b3": "00710a289f870f8470d9c8b8623a8571"
     },
-    "_ansible_verbose_always": true,
-    "_ansible_no_log": false,
-    "changed": false
+    "msg": "OK (9627 bytes)",
+    "elapsed": 1,
+    "changed": false,
+    "json": {
+      "data": [
+        {
+          "attributes": {
+            "advisories_list": [],
+            "advisory_available": false,
+            "business_risk": "Not Defined",
+            "business_risk_id": 0,
+            "business_risk_text": null,
+            "cve_status_id": 0,
+            "cve_status_text": null,
+            "cvss2_score": null,
+            "cvss3_score": "6.500",
+            "description": "Microprocessors use a ‘load port’ subcomponent to perform load operations from memory or IO. During a load operation, the load port receives data from the memory or IO subsystem and then provides the data to the CPU registers and operations in the CPU’s pipelines. Stale load operations results are stored in the 'load port' table until overwritten by newer operations. Certain load-port operations triggered by an attacker can be used to reveal data about previous stale requests leaking data back to the attacker via a timing side-channel.",
+            "first_reported": "2023-03-27T22:19:34.874054+00:00",
+            "impact": "Moderate",
+            "known_exploit": false,
+            "public_date": "2019-05-14T17:00:00+00:00",
+            "remediation": 2,
+            "reporter": 2,
+            "rule": {
+              "change_risk": 3,
+              "description": "\"MDS\": CPU side-channel reported by kernel",
+              "generate_autoplaybook": true,
+              "kbase_node_id": 4134081,
+              "playbook_count": 1,
+              "reboot_required": true,
+              "rule_id": "CVE_2018_12130_cpu_kernel|CVE_2018_12130_CPU_KERNEL_VULNERABLE_2",
+              "summary": "The kernel reports this system is vulnerable.\n"
+            },
+            "status": "Not Reviewed",
+            "status_id": 0,
+            "status_text": null,
+            "synopsis": "CVE-2018-12127"
+          },
+          "id": "CVE-2018-12127",
+          "type": "cve"
+        },
+        {
+          "attributes": {
+            "advisories_list": [],
+            "advisory_available": false,
+            "business_risk": "Not Defined",
+            "business_risk_id": 0,
+            "business_risk_text": null,
+            "cve_status_id": 0,
+            "cve_status_text": null,
+            "cvss2_score": null,
+            "cvss3_score": "6.200",
+            "description": "A flaw was found in the implementation of the \"fill buffer\", a mechanism used by modern CPUs when a cache-miss is made on L1 CPU cache. If an attacker can generate a load operation that would create a page fault, the execution will continue speculatively with incorrect data from the fill buffer while the data is fetched from higher level caches. This response time can be measured to infer data in the fill buffer.",
+            "first_reported": "2023-03-27T22:19:34.874054+00:00",
+            "impact": "Important",
+            "known_exploit": false,
+            "public_date": "2019-05-14T17:00:00+00:00",
+            "remediation": 2,
+            "reporter": 2,
+            "rule": {
+              "change_risk": 3,
+              "description": "\"MDS\": CPU side-channel reported by kernel",
+              "generate_autoplaybook": true,
+              "kbase_node_id": 4134081,
+              "playbook_count": 1,
+              "reboot_required": true,
+              "rule_id": "CVE_2018_12130_cpu_kernel|CVE_2018_12130_CPU_KERNEL_VULNERABLE_2",
+              "summary": "The kernel reports this system is vulnerable.\n"
+            },
+            "status": "Not Reviewed",
+            "status_id": 0,
+            "status_text": null,
+            "synopsis": "CVE-2018-12130"
+          },
+          "id": "CVE-2018-12130",
+          "type": "cve"
+        },
+        {
+          "attributes": {
+            "advisories_list": [],
+            "advisory_available": false,
+            "business_risk": "Not Defined",
+            "business_risk_id": 0,
+            "business_risk_text": null,
+            "cve_status_id": 0,
+            "cve_status_text": null,
+            "cvss2_score": null,
+            "cvss3_score": "6.500",
+            "description": "Modern Intel microprocessors implement hardware-level micro-optimizations to improve the performance of writing data back to CPU caches. The write operation is split into STA (STore Address) and STD (STore Data) sub-operations. These sub-operations allow the processor to hand-off address generation logic into these sub-operations for optimized writes. Both of these sub-operations write to a shared distributed processor structure called the 'processor store buffer'. As a result, an unprivileged attacker could use this flaw to read private data resident within the CPU's processor store buffer.",
+            "first_reported": "2023-03-27T22:19:34.874054+00:00",
+            "impact": "Moderate",
+            "known_exploit": false,
+            "public_date": "2019-05-14T17:00:00+00:00",
+            "remediation": 2,
+            "reporter": 2,
+            "rule": {
+              "change_risk": 3,
+              "description": "\"MDS\": CPU side-channel reported by kernel",
+              "generate_autoplaybook": true,
+              "kbase_node_id": 4134081,
+              "playbook_count": 1,
+              "reboot_required": true,
+              "rule_id": "CVE_2018_12130_cpu_kernel|CVE_2018_12130_CPU_KERNEL_VULNERABLE_2",
+              "summary": "The kernel reports this system is vulnerable.\n"
+            },
+            "status": "Not Reviewed",
+            "status_id": 0,
+            "status_text": null,
+            "synopsis": "CVE-2018-12126"
+          },
+          "id": "CVE-2018-12126",
+          "type": "cve"
+        },
+        {
+          "attributes": {
+            "advisories_list": [],
+            "advisory_available": false,
+            "business_risk": "Not Defined",
+            "business_risk_id": 0,
+            "business_risk_text": null,
+            "cve_status_id": 0,
+            "cve_status_text": null,
+            "cvss2_score": null,
+            "cvss3_score": "3.800",
+            "description": "Uncacheable memory on some microprocessors utilizing speculative execution may allow an authenticated user to potentially enable information disclosure via a side channel with local access.",
+            "first_reported": "2023-03-27T22:19:34.874054+00:00",
+            "impact": "Moderate",
+            "known_exploit": false,
+            "public_date": "2019-05-14T17:00:00+00:00",
+            "remediation": 2,
+            "reporter": 2,
+            "rule": {
+              "change_risk": 3,
+              "description": "\"MDS\": CPU side-channel reported by kernel",
+              "generate_autoplaybook": true,
+              "kbase_node_id": 4134081,
+              "playbook_count": 1,
+              "reboot_required": true,
+              "rule_id": "CVE_2018_12130_cpu_kernel|CVE_2018_12130_CPU_KERNEL_VULNERABLE_2",
+              "summary": "The kernel reports this system is vulnerable.\n"
+            },
+            "status": "Not Reviewed",
+            "status_id": 0,
+            "status_text": null,
+            "synopsis": "CVE-2019-11091"
+          },
+          "id": "CVE-2019-11091",
+          "type": "cve"
+        },
+        {
+          "attributes": {
+            "advisories_list": [],
+            "advisory_available": false,
+            "business_risk": "Not Defined",
+            "business_risk_id": 0,
+            "business_risk_text": null,
+            "cve_status_id": 0,
+            "cve_status_text": null,
+            "cvss2_score": null,
+            "cvss3_score": "5.600",
+            "description": "An industry-wide issue was found in the way many modern microprocessor designs have implemented speculative execution of Load & Store instructions (a commonly used performance optimization). It relies on the presence of a precisely-defined instruction sequence in the privileged code as well as the fact that memory read from address to which a recent memory write has occurred may see an older value and subsequently cause an update into the microprocessor's data cache even for speculatively executed instructions that never actually commit (retire). As a result, an unprivileged attacker could use this flaw to read privileged memory by conducting targeted cache side-channel attacks.",
+            "first_reported": "2023-03-27T22:19:34.874054+00:00",
+            "impact": "Important",
+            "known_exploit": false,
+            "public_date": "2018-05-21T21:00:00+00:00",
+            "remediation": 1,
+            "reporter": 2,
+            "rule": {
+              "change_risk": 3,
+              "description": "\"SSBD\": CPU side-channel with outdated microcode",
+              "generate_autoplaybook": true,
+              "kbase_node_id": 3448801,
+              "playbook_count": 0,
+              "reboot_required": true,
+              "rule_id": "CVE_2018_3639_cpu_kernel|CVE_2018_3639_CPU_BAD_MICROCODE_2",
+              "summary": "Vulnerable microcode is installed.\n"
+            },
+            "status": "Not Reviewed",
+            "status_id": 0,
+            "status_text": null,
+            "synopsis": "CVE-2018-3639"
+          },
+          "id": "CVE-2018-3639",
+          "type": "cve"
+        }
+      ],
+      "links": {
+        "first": "/api/vulnerability/v1/systems/fdd60153-4902-4f54-b666-d9ea40643011/cves?offset=0&limit=20&data_format=json",
+        "last": "/api/vulnerability/v1/systems/fdd60153-4902-4f54-b666-d9ea40643011/cves?offset=0&limit=20&data_format=json",
+        "next": null,
+        "previous": null
+      },
+      "meta": {
+        "advisory": null,
+        "advisory_available": null,
+        "business_risk_id": null,
+        "cvss_from": null,
+        "cvss_to": null,
+        "data_format": "json",
+        "filter": null,
+        "first_reported_from": null,
+        "first_reported_to": null,
+        "impact": null,
+        "known_exploit": null,
+        "limit": 20,
+        "offset": 0,
+        "page": 1,
+        "page_size": 20,
+        "pages": 1,
+        "patch_access": true,
+        "permissions": [
+          "inventory:*:*",
+          "remediations:remediation:read",
+          "remediations:remediation:write",
+          "vulnerability:*:*",
+          "remediations:*:write",
+          "inventory:*:read",
+          "remediations:*:read"
+        ],
+        "public_from": null,
+        "public_to": null,
+        "remediation": null,
+        "rule_key": null,
+        "rule_presence": null,
+        "show_advisories": null,
+        "sort": null,
+        "status_id": null,
+        "total_items": 5
+      }
+    },
+    "invocation": {
+      "module_args": {
+        "url": "https://console.redhat.com/api/vulnerability/v1/systems/fdd60153-4902-4f54-b666-d9ea40643011/cves",
+        "method": "GET",
+        "user": "zigfreed",
+        "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
+        "validate_certs": false,
+        "force_basic_auth": true,
+        "status_code": [
+          200
+        ],
+        "return_content": true,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "unsafe_writes": true,
+        "url_username": "zigfreed",
+        "url_password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER",
+        "force": false,
+        "http_agent": "ansible-httpget",
+        "use_proxy": true,
+        "use_gssapi": false,
+        "body_format": "raw",
+        "follow_redirects": "safe",
+        "timeout": 30,
+        "remote_src": false,
+        "unredirected_headers": [],
+        "client_cert": null,
+        "client_key": null,
+        "dest": null,
+        "body": null,
+        "src": null,
+        "creates": null,
+        "removes": null,
+        "unix_socket": null,
+        "ca_path": null,
+        "mode": null,
+        "owner": null,
+        "group": null,
+        "seuser": null,
+        "serole": null,
+        "selevel": null,
+        "setype": null,
+        "attributes": null
+      }
+    },
+    "warnings": [
+      "Module did not set no_log for password"
+    ],
+    "_ansible_no_log": false
   }
