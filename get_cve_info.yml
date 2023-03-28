@@ -38,12 +38,10 @@
       ansible.builtin.debug:
         msg: "{{ lookup('ansible.utils.to_paths', cves) }}"
 
-    # - name: Create a CVE dictionary 
-    #   loop: "{{ my_cve_list.json | community.general.json_query('data[*].id') | dict2items }}"
-    #   ansible.builtin.set_fact:
-    #     cves: "{{ item }}"
+    - name: Create cves dictionary (this is now per cve)
+      ansible.builtin.set_fact:
+        my_cve_dictionary: "{{ cves | community.general.json_query('*.id') }}"
 
-    # - name: Print out CVEs
-    #   loop: "{{ my_cve_list.json | community.general.json_query('data[*].id') | dict2items }}"
-    #   ansible.builtin.debug:
-    #     msg: "*******, {{ item.key }} == {{ item.value }}"
+    - name: Print out cves
+      ansible.builtin.debug:
+        msg: "{{ my_cve_dictionary }}"
