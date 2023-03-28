@@ -58,6 +58,6 @@
         var: my_cve_dictionary
 
     - name: Loop over CVEs and print out desired info
-      with_items: "{{ my_cve_dictionary }}"
-      ansible.builtin.include_tasks:
-        tasks/print_out_cve_info.yml
+      loop: "{{ lookup('ansible.builtin.dict', my_cve_dictionary) }}"
+      ansible.builtin.debug:
+        msg: "CVE {{ item.key }} is {{ item.value.synopsis }} ({{ item.value.cvss3_score }})"
