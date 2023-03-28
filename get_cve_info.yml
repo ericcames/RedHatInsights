@@ -27,6 +27,6 @@
     #     msg: "*******, {{ item.key }} == {{ item.value }}"
 
     - name: printing shit
-      loop: "{{ my_cve_list.json.data.attributes.description }}"
+      loop: "{{ my_cve_list.url }}"
       ansible.builtin.debug:
         msg: "hello, {{ item }}"
