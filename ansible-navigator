@@ -1,0 +1,7 @@
+---
+ansible-navigator:
+  execution-environment:
+    container-engine: podman
+    image: ee-supported-rhel8:2.0.0
+    image: registry.redhat.io/ansible-automation-platform-23/ee-29-rhel8 
+    enabled: false
