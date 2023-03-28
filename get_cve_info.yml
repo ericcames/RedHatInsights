@@ -31,10 +31,10 @@
       ansible.builtin.debug:
         msg: "{{ item }}"
 
-    # - name: Create a CVE dictionary 
-    #   ansible.builtin.set_fact:
-    #     cves: "{{ my_cve_list.json | community.general.json_query('data[*].id') }}"
+    - name: Create a CVE dictionary 
+      ansible.builtin.set_fact:
+        cves: "{{ my_cve_list.json.data | community.general.json_query('*.id') }}"
 
-    # - name: Print out CVEs
-    #   ansible.builtin.debug:
-    #     msg: "{{ cves }}"
+    - name: Print out CVEs
+      ansible.builtin.debug:
+        msg: "{{ cves }}"
