@@ -35,4 +35,6 @@
       loop: "{{ my_cve_list.json | community.general.json_query('data[*].attributes.synopsis') }}"
       ansible.builtin.debug:
         var: item
+      with_items:
+        - ('data[*].attributes.synopsis')
       
