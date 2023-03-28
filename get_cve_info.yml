@@ -36,5 +36,5 @@
       ansible.builtin.debug:
         var: item
       with_items:
-        - ('data[*].attributes.synopsis')
+        - ('data[*].attributes.description')
       
