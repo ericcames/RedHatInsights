@@ -31,10 +31,10 @@
     #   ansible.builtin.debug:
     #     msg: "hello, {{ item }}"
 
-      - name: Create CVE Dictionary
-        ansible.builtin.set_fact:
-          cves: "{{ id | json_query('*.id') }}"
+    - name: Create CVE Dictionary
+      ansible.builtin.set_fact:
+        cves: "{{ id | json_query('*.id') }}"
 
-      - name: print shit out 
-        ansible.builtin.debug:
-          msg: "{{ cves }}"
+    - name: print shit out 
+      ansible.builtin.debug:
+        msg: "{{ cves }}"
