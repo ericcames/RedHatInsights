@@ -31,11 +31,12 @@
       ansible.builtin.debug:
         msg: "{{ item }}"
 
-    - name: Create a CVE dictionary 
-      loop: "{{ my_cve_list.json | community.general.json_query('data[*].id') }}"
-      ansible.builtin.set_fact:
-        cves: "{{ item }}"
+    # - name: Create a CVE dictionary 
+    #   loop: "{{ my_cve_list.json | community.general.json_query('data[*].id') | dict2items }}"
+    #   ansible.builtin.set_fact:
+    #     cves: "{{ item }}"
 
     - name: Print out CVEs
+      loop: "{{ my_cve_list.json | community.general.json_query('data[*].id') | dict2items }}"
       ansible.builtin.debug:
-        msg: "{{ cves }}"
+        msg: "*******, {{ item.key }} == {{ item.value }}"
