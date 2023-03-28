@@ -23,7 +23,7 @@
 
     - name: Create cves dictionary (this is now per cve)
       ansible.builtin.set_fact:
-        my_cve_dictionary: "{{ cves | community.general.json_query('*.id') }}"
+        my_cve_dictionary: "{{ cves | json_query('*.id') }}"
 
     - name: Print out neighbors
       ansible.builtin.debug:
