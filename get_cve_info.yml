@@ -26,7 +26,15 @@
     #   ansible.builtin.debug:
     #     msg: "*******, {{ item.key }} == {{ item.value }}"
 
-    - name: printing shit
-      loop: "{{ my_cve_list.url }}"
-      ansible.builtin.debug:
-        msg: "hello, {{ item }}"
+    # - name: printing shit
+    #   loop: "{{ my_cve_list.url }}"
+    #   ansible.builtin.debug:
+    #     msg: "hello, {{ item }}"
+
+      - name: Create CVE Dictionary
+        ansible.builtin.set_fact:
+          cves: "{{ id | json_query('*.id') }}"
+
+      - name: print shit out 
+        ansible.builtin.debug:
+          msg: "{{ cves }}"
