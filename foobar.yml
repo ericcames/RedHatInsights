@@ -1,15 +1,13 @@
 ---
-  - name: json parsing
+  - name: Go down the JSON file 2 levels
     hosts: localhost
     gather_facts: no
-    collections:
-      - community.general
     vars:
       input: "{{ lookup('file', 'files/insights.json') | from_json }}"
 
     tasks:
     
-    - name: Create a CVE dictionary
+    - name: Create a CVE Dictionary
       ansible.builtin.set_fact:
         cves: "{{ input.json.data }}"
 
@@ -17,14 +15,14 @@
       ansible.builtin.debug:
         var: cves
 
-    - name: Print out flatten cves input
+    - name: Print out flattend cves input
       ansible.builtin.debug:
         msg: "{{ lookup('ansible.utils.to_paths', cves) }}"
 
     - name: Create cves dictionary (this is now per cve)
       ansible.builtin.set_fact:
-        my_cve_dictionary: "{{ cves | json_query('*.id') }}"
+        my_cve_dictionary: "{{ cves | community.general.json_query('*.id') }}"
 
-    - name: Print out neighbors
+    - name: Print out cves
       ansible.builtin.debug:
         msg: "{{ my_cve_dictionary }}"
