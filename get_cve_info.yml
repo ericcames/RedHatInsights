@@ -22,14 +22,14 @@
         headers:
           Content-Type: "application/json"
 
-    - name: Display all CVEs
-      loop: "{{ my_cve_list.json | community.general.json_query('data[*].id') }}"
-      ansible.builtin.debug:
-        msg: "{{ item }}"
+    # - name: Display all CVEs
+    #   loop: "{{ my_cve_list.json | community.general.json_query('data[*].id') }}"
+    #   ansible.builtin.debug:
+    #     msg: "{{ item }}"
 
-    # - name: Create a CVE Dictionary
-    #   ansible.builtin.set_fact:
-    #     cves: "{{ my_cve_list.json.data }}"
+    - name: Create a CVE Dictionary
+      ansible.builtin.set_fact:
+        cves: "{{ my_cve_list.json.data }}"
 
     # - name: Print out cves
     #   ansible.builtin.debug:
