@@ -56,8 +56,3 @@
     - name: Print out CVE Dictionary
       ansible.builtin.debug:
         var: my_cve_dictionary
-
-    - name: Loop over CVEs and print out desired info
-      loop: "{{ lookup('ansible.builtin.dict', my_cve_dictionary) }}"
-      ansible.builtin.debug:
-        msg: "CVE {{ my_cve_dictionary.synopsis }} {{ my_cve_dictionary.remediation }} "
