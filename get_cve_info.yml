@@ -27,9 +27,9 @@
     #   ansible.builtin.debug:
     #     msg: "{{ item }}"
 
-    - name: Create a CVE Dictionary
-      ansible.builtin.set_fact:
-        cves: "{{ my_cve_list.json.data }}"
+    # - name: Create a CVE Dictionary
+    #   ansible.builtin.set_fact:
+    #     cves: "{{ my_cve_list.json.data }}"
 
     # - name: Print out cves
     #   ansible.builtin.debug:
@@ -51,7 +51,7 @@
       register: my_cve_dictionary
       ansible.builtin.set_stats:
         data:
-          my_cve_dictionary: "{{ cves | community.general.json_query('[*].attributes') }}"
+          my_cve_dictionary: "{{ my_cve_list.json.data | community.general.json_query('[*].attributes') }}"
 
     - name: Print out CVE Dictionary
       ansible.builtin.debug:
