@@ -56,3 +56,8 @@
     - name: Print out CVE Dictionary
       ansible.builtin.debug:
         var: my_cve_dictionary
+
+    - name: Loop over CVEs and print out desired info
+      with_items: "{{ my_cve_dictionary }}"
+      ansible.builtin.include_tasks:
+        tasks/print_out_cve_info.yml

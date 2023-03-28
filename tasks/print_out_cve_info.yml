@@ -1,0 +1,7 @@
+---
+  - name: Print out things we are going to put into the ticketing system.
+    vars:
+      info: "{{ lookup('dict', item) }}"
+    #when: info.value.state is not match("FULL.*")
+    ansible.builtin.debug:
+      msg: "{{ info.key }}, {{ info.value.synopsis}}, Summary:{{ info.value.rule.summary }}"
