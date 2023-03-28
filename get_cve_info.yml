@@ -31,9 +31,9 @@
       ansible.builtin.set_fact:
         cves: "{{ my_cve_list.json.data }}"
 
-    # - name: Print out cves
-    #   ansible.builtin.debug:
-    #     var: cves
+    - name: Print out cves
+      ansible.builtin.debug:
+        var: cves
 
     # - name: Print out flattend cves input
     #   ansible.builtin.debug:
