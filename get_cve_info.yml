@@ -32,7 +32,7 @@
     #     msg: "hello, {{ item }}"
 
     - name: Display all CVEs
-      loop: "{{ my_cve_list.json | community.general.json_query('data.attributes[*].synopsis') }}"
+      loop: "{{ my_cve_list.json | community.general.json_query('data.attributes[*].synopsis')|list }}"
       ansible.builtin.debug:
         var: item
       
