@@ -24,4 +24,4 @@
     - name: Looping practice
       loop: "{{ my_cve_list|dict2items }}"
       ansible.builtin.debug:
-        msg: "hello, {{ item }}"
+        msg: "*******, {{ item.key }} == {{ item.value }}"
