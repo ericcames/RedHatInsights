@@ -9,6 +9,7 @@
     - name: Get my list of CVEs
       register: my_cve_list
       ignore_errors: true
+      no_log: true
       ansible.builtin.uri:
         url: "https://console.redhat.com/api/vulnerability/v1/systems/{{ my_insights_inventory_id }}/cves"
         method: GET
@@ -34,9 +35,9 @@
     #   ansible.builtin.debug:
     #     var: cves
 
-    - name: Print out flattend cves input
-      ansible.builtin.debug:
-        msg: "{{ lookup('ansible.utils.to_paths', cves) }}"
+    # - name: Print out flattend cves input
+    #   ansible.builtin.debug:
+    #     msg: "{{ lookup('ansible.utils.to_paths', cves) }}"
 
     # - name: Create cves dictionary (this is now per cve)
     #   ansible.builtin.set_fact:
@@ -51,3 +52,7 @@
       ansible.builtin.set_stats:
         data:
           my_cve_dictionary: "{{ cves | community.general.json_query('[*].attributes') }}"
+
+    - name: Print out CVE Dictionary
+      ansible.builtin.debug:
+        var: my_cve_dictionary
