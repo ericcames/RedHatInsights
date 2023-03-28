@@ -21,7 +21,12 @@
         headers:
           Content-Type: "application/json"
 
-    - name: Looping practice
-      loop: "{{ my_cve_list|dict2items }}"
+    # - name: Looping practice
+    #   loop: "{{ my_cve_list|dict2items }}"
+    #   ansible.builtin.debug:
+    #     msg: "*******, {{ item.key }} == {{ item.value }}"
+
+    - name: printing shit
+      loop: "{{ my_cve_list.json.data.attributes }}"
       ansible.builtin.debug:
-        msg: "*******, {{ item.key }} == {{ item.value }}"
+        msg: "hello, {{ item }}"
