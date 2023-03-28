@@ -27,7 +27,6 @@
     #     msg: "*******, {{ item.key }} == {{ item.value }}"
 
     - name: Display all CVEs
-      loop: "{{ my_cve_list.json | community.general.json_query('data[*].attributes.synopsis') }}"
+      loop: "{{ my_cve_list.json | community.general.json_query('data[*].id') }}"
       ansible.builtin.debug:
-        msg: "{{ item }} hello ('*.attributes.remediation')"
-      
+        msg: "{{ item }}"
