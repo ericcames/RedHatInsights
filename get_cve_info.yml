@@ -34,6 +34,10 @@
     #           Knowledge Base ID: {{ item.attributes.rule.kbase_node_id }}->
     #           Rule ID: {{ item.attributes.rule.rule_id }}"
 
-    - name: Print out flattend input variable
+    # - name: Print out flattend input variable
+    #   ansible.builtin.debug:
+    #     msg: "{{ lookup('ansible.utils.to_paths', my_cve_list) }}"
+
+    - name: Print out my_cve_list
       ansible.builtin.debug:
-        msg: "{{ lookup('ansible.utils.to_paths', my_cve_list) }}"
+        msg: "{{ my_cve_list }}"
