@@ -6,7 +6,7 @@
 
     tasks:
 
-    - name: Retrieve change request tasks by number
-      register: my_list_tasks
+    - name: Retrieve change ticket sys_id
+      register: chg_ticket_sys_id
       servicenow.itsm.change_request_task_info:
         change_request: "{{ ticket_number }}"
