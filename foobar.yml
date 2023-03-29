@@ -7,22 +7,22 @@
 
     tasks:
     
-    - name: Create a CVE Dictionary
-      ansible.builtin.set_fact:
-        cves: "{{ input.json.data }}"
+    # - name: print out input variable
+    #   ansible.builtin.debug:
+    #     msg: "{{ input['json']['data'] }}"
+    
+    # - name: Print out flattend input variable
+    #   ansible.builtin.debug:
+    #     msg: "{{ lookup('ansible.utils.to_paths', input) }}"
 
-    - name: Print out cves
+    - name: Print out selected items foreach cve from the input variable
+      loop: "{{ input['json']['data'] }}"
       ansible.builtin.debug:
-        var: cves
-
-    - name: Print out flattend cves input
-      ansible.builtin.debug:
-        msg: "{{ lookup('ansible.utils.to_paths', cves) }}"
-
-    - name: Create cves dictionary (this is now per cve)
-      ansible.builtin.set_fact:
-        my_cve_dictionary: "{{ cves | community.general.json_query('*.id') }}"
-
-    - name: Print out cves
-      ansible.builtin.debug:
-        msg: "{{ my_cve_dictionary }}"
+        msg: "CVE ID: vulnerabilities:{{ item.attributes.synopsis }}->
+              CVE Short Description: {{ item.attributes.rule.description }}->
+              CVE Summary: {{ item.attributes.rule.summary }}->
+              Reboot Required: {{ item.attributes.rule.reboot_required }}->
+              Playbook Count: {{ item.attributes.rule.playbook_count }}->
+              Generate Playbook: {{ item.attributes.rule.generate_autoplaybook }}->
+              Knowledge Base ID: {{ item.attributes.rule.kbase_node_id }}->
+              Rule ID: {{ item.attributes.rule.rule_id }}"
