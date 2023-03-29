@@ -64,6 +64,5 @@
           user_input: "Red Hat Insights Inventory ID: {{ my_insights_inventory_id }}"
 
     - name: Print out task_numbers_are_here
-      loop: "{{ task_numbers_are_here['record'] }}"
       ansible.builtin.debug:
-        var: "{{ item.number }}"
+        msg: "{{ task_numbers_are_here['record'] }}"
