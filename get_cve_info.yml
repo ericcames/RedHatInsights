@@ -39,19 +39,19 @@
       ansible.builtin.debug:
         msg: "{{ lookup('ansible.utils.to_paths', cves) }}"
 
-    # - name: Create cves dictionary (this is now per cve)
-    #   ansible.builtin.set_fact:
-    #     my_cve_dictionary: "{{ cves | community.general.json_query('[*].attributes') }}"
+    - name: Create cves dictionary (this is now per cve)
+      ansible.builtin.set_fact:
+        my_cve_dictionary: "{{ cves | community.general.json_query('[*].attributes.rule') }}"
 
     # - name: Print out cves
     #   ansible.builtin.debug:
     #     msg: "{{ my_cve_dictionary }}"
 
-    - name: Capture Red Hat Insights CVEs
-      register: my_cve_dictionary
-      ansible.builtin.set_stats:
-        data:
-          my_cve_dictionary: "{{ my_cve_list.json.data | community.general.json_query('[*].attributes') }}"
+    # - name: Capture Red Hat Insights CVEs
+    #   register: my_cve_dictionary
+    #   ansible.builtin.set_stats:
+    #     data:
+    #       my_cve_dictionary: "{{ my_cve_list.json.data | community.general.json_query('[*].attributes') }}"
 
     - name: Print out CVE Dictionary
       ansible.builtin.debug:
