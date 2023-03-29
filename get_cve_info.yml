@@ -21,17 +21,26 @@
         headers:
           Content-Type: "application/json"
 
-    - name: Print out selected items foreach cve from the input variable
+    # - name: Print out selected items foreach cve from the input variable
+    #   loop: "{{ my_cve_list['json']['data'] }}"
+    #   ansible.builtin.debug:
+    #     msg: "CVE ID: vulnerabilities:{{ item.attributes.synopsis }}->
+    #           CVE Description: {{ item.attributes.description }}->
+    #           Remediation: {{ item.attributes.remediation }}"
+
+    - name: Create a change task
       loop: "{{ my_cve_list['json']['data'] }}"
-      ansible.builtin.debug:
-        msg: "CVE ID: vulnerabilities:{{ item.attributes.synopsis }}->
-              CVE Description: {{ item.attributes.description }}->
-              Remediation: {{ item.attributes.remediation }}"
-
-    # - name: Print out flattend input variable
-    #   ansible.builtin.debug:
-    #     msg: "{{ lookup('ansible.utils.to_paths', my_cve_list) }}"
-
-    # - name: Print out my_cve_list
-    #   ansible.builtin.debug:
-    #     msg: "{{ my_cve_list }}"
+      when: item.attributes.remediation == "2"
+      servicenow.itsm.change_request_task:
+        configuration_item: "{{ my_server }}"
+        change_request_number: "{{ ticket_number }}"
+        type: planning
+        state: open
+        assigned_to: eric.ames
+        assignment_group: "Ansible West Tigers"
+        short_description: "vulnerabilities:{{ item.attributes.synopsis }}"
+        description: "{{ item.attributes.description }}"
+        on_hold: true
+        hold_reason: "Waiting for Ansible Automation Platform to run the remdiation playbook."
+        other:
+          approval: approved
