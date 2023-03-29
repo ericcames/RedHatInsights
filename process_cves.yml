@@ -65,4 +65,4 @@
 
     - name: Print out task_numbers_are_here
       ansible.builtin.debug:
-        var: "{{ task_numbers_are_here.record.number }}"
+        var: "{{ task_numbers_are_here.number }}"
