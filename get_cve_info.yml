@@ -35,9 +35,9 @@
       ansible.builtin.debug:
         var: cves
 
-    # - name: Print out flattend cves input
-    #   ansible.builtin.debug:
-    #     msg: "{{ lookup('ansible.utils.to_paths', cves) }}"
+    - name: Print out flattend cves input
+      ansible.builtin.debug:
+        msg: "{{ lookup('ansible.utils.to_paths', cves) }}"
 
     # - name: Create cves dictionary (this is now per cve)
     #   ansible.builtin.set_fact:
