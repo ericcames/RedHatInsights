@@ -9,7 +9,6 @@
     - name: Get my list of CVEs
       register: my_cve_list
       ignore_errors: true
-      no_log: true
       ansible.builtin.uri:
         url: "https://console.redhat.com/api/vulnerability/v1/systems/{{ my_insights_inventory_id }}/cves"
         method: GET
