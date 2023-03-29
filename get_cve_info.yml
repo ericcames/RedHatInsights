@@ -36,7 +36,7 @@
         change_request_number: "{{ ticket_number }}"
         type: planning
         state: open
-        assigned_to: "Eric Ames"
+        assigned_to: "hercules"
         assignment_group: "Ansible West Tigers"
         short_description: "vulnerabilities:{{ item.attributes.synopsis }}"
         description: "{{ item.attributes.description }}"
