@@ -38,10 +38,9 @@
         state: open
         assigned_to: "hercules"
         assignment_group: "Ansible West Tigers"
-        short_description: "vulnerabilities:{{ item.attributes.synopsis }}"
+        short_description: "vulnerabilities:{{ item.attributes.synopsis }} on Red Hat Insights Inventory ID: {{ my_insights_inventory_id }}"
         description: "{{ item.attributes.description }}"
         on_hold: true
         hold_reason: "Waiting for Ansible Automation Platform to run the remdiation playbook."
-        work_notes: "Red Hat Insights Inventory ID: {{ my_insights_inventory_id }} for {{ my_server }}"
         other:
           approval: approved
