@@ -1,0 +1,12 @@
+---
+  - name: Processing my change related tasks
+    hosts: localhost
+    connection: local
+    gather_facts: no
+
+    tasks:
+
+    - name: Retrieve change request tasks by number
+      register: my_list_tasks
+      servicenow.itsm.change_request_task_info:
+        change_request: "{{ ticket_number }}"
