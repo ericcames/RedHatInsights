@@ -30,7 +30,7 @@
 
     - name: Create a change task
       loop: "{{ my_cve_list['json']['data'] }}"
-      when: item.attributes.remediation == "2"
+      when: item.attributes.remediation == 2
       servicenow.itsm.change_request_task:
         configuration_item: "{{ my_server }}"
         change_request_number: "{{ ticket_number }}"
