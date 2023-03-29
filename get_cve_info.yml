@@ -22,14 +22,18 @@
         headers:
           Content-Type: "application/json"
 
-    - name: Print out selected items foreach cve from the input variable
-      loop: "{{ my_cve_list['json']['data'] }}"
+    # - name: Print out selected items foreach cve from the input variable
+    #   loop: "{{ my_cve_list['json']['data'] }}"
+    #   ansible.builtin.debug:
+    #     msg: "CVE ID: vulnerabilities:{{ item.attributes.synopsis }}->
+    #           CVE Short Description: {{ item.attributes.rule.description }}->
+    #           CVE Summary: {{ item.attributes.rule.summary }}->
+    #           Reboot Required: {{ item.attributes.rule.reboot_required }}->
+    #           Playbook Count: {{ item.attributes.rule.playbook_count }}->
+    #           Generate Playbook: {{ item.attributes.rule.generate_autoplaybook }}->
+    #           Knowledge Base ID: {{ item.attributes.rule.kbase_node_id }}->
+    #           Rule ID: {{ item.attributes.rule.rule_id }}"
+
+    - name: Print out flattend input variable
       ansible.builtin.debug:
-        msg: "CVE ID: vulnerabilities:{{ item.attributes.synopsis }}->
-              CVE Short Description: {{ item.attributes.rule.description }}->
-              CVE Summary: {{ item.attributes.rule.summary }}->
-              Reboot Required: {{ item.attributes.rule.reboot_required }}->
-              Playbook Count: {{ item.attributes.rule.playbook_count }}->
-              Generate Playbook: {{ item.attributes.rule.generate_autoplaybook }}->
-              Knowledge Base ID: {{ item.attributes.rule.kbase_node_id }}->
-              Rule ID: {{ item.attributes.rule.rule_id }}"
+        msg: "{{ lookup('ansible.utils.to_paths', my_cve_list) }}"
