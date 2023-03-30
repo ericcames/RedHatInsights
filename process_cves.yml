@@ -63,6 +63,7 @@
 
     - name: Update a fact for change ticket task numbers; white space delimited
       loop: "{{ task_numbers_are_here['results'] }}"
+      when: item.changed != false
       ansible.builtin.set_fact:
         chg_tasks: "{{ chg_tasks + item.record.number }} "
     
