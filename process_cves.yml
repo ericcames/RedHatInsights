@@ -65,4 +65,4 @@
 
     - name: Print out task_numbers_are_here
       ansible.builtin.debug:
-        msg: "{{ task_numbers_are_here }}"
+        msg: "{{ task_numbers_are_here.results.record.number }}"
