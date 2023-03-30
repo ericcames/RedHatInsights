@@ -5,7 +5,7 @@
     gather_facts: no
     vars:
       - chg_tasks: ''
-      - chg_tasks_dict: "{{ chg_tasks_dict | default({})}}"
+      - chg_tasks_dict: {}
 
     tasks:
 
