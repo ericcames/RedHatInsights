@@ -66,4 +66,4 @@
 
     - name: Print a list of change related task tickets
       ansible.builtin.debug:
-        msg: "{{ chg_tasks }}"
+        msg: "{{ (chg_tasks_raw.split()) }}"
