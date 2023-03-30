@@ -66,7 +66,7 @@
     
     - name: Retrieve change request tasks by number
       register: task_info_here
-      loop: "{{ chg_tasks | ansible.builtin.to_json(indent=4, sort_keys=True) | wantlist=True }}"
+      loop: "{{ chg_tasks|wantlist=True }}"
       servicenow.itsm.change_request_task_info:
         number: "{{ item }}"
 
