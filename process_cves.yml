@@ -63,3 +63,13 @@
     - name: Print a list of change related task tickets
       ansible.builtin.debug:
         msg: "{{ chg_tasks }}"
+    
+    - name: Retrieve change request tasks by number
+      register: task_info_here
+      loop: "{{ chg_tasks }}"
+      servicenow.itsm.change_request_task_info:
+        number: "{{ item }}"
+
+    - name: printing printing
+      debug:
+        msg: "{{ task_info_here }}"
