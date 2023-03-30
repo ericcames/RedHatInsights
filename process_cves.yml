@@ -65,6 +65,5 @@
         chg_tasks: "{{ ' '.join(chg_tasks_raw.split()) }}"
 
     - name: Print a list of change related task tickets
-      loop: "{{ chg_tasks }}"
       ansible.builtin.debug:
-        msg: "{{ item }}"
+        msg: "{{ chg_tasks }}"
