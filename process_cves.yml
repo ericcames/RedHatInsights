@@ -76,4 +76,4 @@
 
     - name: test
       debug:
-        msg: "{{ chg_tasks | get_type }}"
+        msg: "{{ chg_tasks | type_debug }}"
