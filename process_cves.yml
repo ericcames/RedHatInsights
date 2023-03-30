@@ -27,10 +27,6 @@
     #     msg: "CVE ID: vulnerabilities:{{ item.attributes.synopsis }}->
     #           CVE Description: {{ item.attributes.description }}->
     #           Remediation: {{ item.attributes.remediation }}"
-
-    - name: Set a for change ticket task number
-      ansible.builtin.set_fact:
-        CTASKs:
     
     - name: Create a change task for each cve with a playbook
       register: task_numbers_are_here
@@ -63,7 +59,22 @@
         other:
           user_input: "Red Hat Insights Inventory ID: {{ my_insights_inventory_id }}"
 
-    - name: Print out task_numbers_are_here
+    # - name: Print out task_numbers_are_here
+    #   loop: "{{ task_numbers_are_here['results'] }}"
+    #   ansible.builtin.debug:
+    #     msg: "{{ item.record.number }}"
+
+    - name: Set a fact for change ticket task numbers
+      ansible.builtin.set_fact:
+        CTASKs:
+    
+    - name: Update CTASKs with change ticket task numbers for the CVEs
       loop: "{{ task_numbers_are_here['results'] }}"
+      ansible.utils.update_fact:
+        updates:
+        - path: CTASKs
+          value: "{{ item. record.number }}"
+
+    - name: Print
       ansible.builtin.debug:
-        msg: "{{ item.record.number }}"
+        var: CTASKs
