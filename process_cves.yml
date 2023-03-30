@@ -66,7 +66,7 @@
     
     - name: Retrieve change request tasks by number
       register: task_info_here
-      loop: "{{ chg_tasks }}"
+      loop: "{{ chg_tasks | dict2items }}"
       servicenow.itsm.change_request_task_info:
         number: "{{ item }}"
 
