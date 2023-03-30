@@ -78,5 +78,3 @@
       loop: "{{ (chg_tasks_raw.split()) }}"
       servicenow.itsm.change_request_task_info:
         number: "{{ item }}"
-        query:
-          - short_description:
