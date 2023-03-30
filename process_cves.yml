@@ -76,4 +76,5 @@
 
     - name: test
       debug:
-        msg: "{{ chg_tasks | type_debug }}"
+        #msg: "{{ chg_tasks | type_debug }}"
+        msg: "{{ chg_tasks|ansible.builtin.to_json(indent=4, sort_keys=True) }}"
