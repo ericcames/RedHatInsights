@@ -61,6 +61,10 @@
         other:
           user_input: "Red Hat Insights Inventory ID: {{ my_insights_inventory_id }}"
 
+    - name: printing printing 
+      ansible.builtin.debug:
+        msg: "{{ task_numbers_are_here }}"
+
     - name: Update a fact for change ticket task numbers; white space delimited
       loop: "{{ task_numbers_are_here['results'] }}"
       when: item.changed != false
