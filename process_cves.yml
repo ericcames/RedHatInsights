@@ -67,6 +67,6 @@
       servicenow.itsm.change_request_task_info:
         number: "{{ item }}"
 
-    - name: print out dictionary
+    - name: Print out task_info_here
       debug:
-        var: "{{ chg_tasks_dict }}"
+        msg: "{{ task_info_here }}"
