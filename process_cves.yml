@@ -70,6 +70,7 @@
     
     - name: Update CTASKs with change ticket task numbers for the CVEs
       loop: "{{ task_numbers_are_here['results'] }}"
+      register: updated
       ansible.utils.update_fact:
         updates:
         - path: CTASKs
@@ -77,4 +78,4 @@
 
     - name: Print
       ansible.builtin.debug:
-        var: CTASKs
+        var: updated.CTASKs
