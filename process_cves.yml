@@ -5,11 +5,7 @@
     gather_facts: no
     vars:
       - chg_tasks: ''
-      - chg_tasks_dict: {
-          'number': '',
-          'cveid':  '',
-          'insights_inventory_id': ''
-          }
+      - chg_tasks_dict: "{{ chg_tasks_dict | default({})}}"
 
     tasks:
 
