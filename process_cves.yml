@@ -4,7 +4,7 @@
     connection: local
     gather_facts: no
     vars:
-      chg_tasks_raw: ''
+      chg_tasks: ''
 
     tasks:
 
@@ -58,23 +58,10 @@
       loop: "{{ task_numbers_are_here['results'] }}"
       when: item.changed != false
       ansible.builtin.set_fact:
-        chg_tasks_raw: "{{ chg_tasks_raw + item.record.number }} "
+        chg_tasks: "{{ chg_tasks + item.record.number }} "
     
-    - name: Convert chg_tasks_raw to a white space delimted list
-      ansible.builtin.set_fact:
-        chg_tasks: "{{ ' '.join(chg_tasks_raw.split()) }}"
-
-    # - name: Print a list of change related task tickets
-    #   ansible.builtin.debug:
-    #     msg: "{{ (chg_tasks_raw.split()) }}"
-
-    # - name: Print a list of change related task tickets
-    #   loop: "{{ (chg_tasks_raw.split()) }}"
-    #   ansible.builtin.debug:
-    #     msg: "{{ item }}"
-
     - name: Retrieve change request tasks by number
       register: task_info_here
-      loop: "{{ (chg_tasks_raw.split()) }}"
+      loop: "{{ (chg_tasks.split()) }}"
       servicenow.itsm.change_request_task_info:
         number: "{{ item }}"
