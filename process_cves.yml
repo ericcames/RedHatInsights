@@ -59,15 +59,15 @@
         other:
           user_input: "Red Hat Insights Inventory ID: {{ my_insights_inventory_id }}"
 
-    - name: is this a list?
-      ansible.builtin.debug:
-        var: "{{ my_cve_list | type_debug }}"
+    # - name: is this a list?
+    #   ansible.builtin.debug:
+    #     var: "{{ my_cve_list | type_debug }}"
     
 
-    # - name: Print out task_numbers_are_here
-    #   loop: "{{ task_numbers_are_here['results'] }}"
-    #   ansible.builtin.debug:
-    #     msg: "{{ item.record.number }}"
+    - name: Print out task_numbers_are_here
+      loop: "{{ task_numbers_are_here['results'] }}"
+      ansible.builtin.debug:
+        var: "{{ item.record.number }}"
 
     # - name: Set a fact for change ticket task numbers
     #   ansible.builtin.set_fact:
