@@ -73,7 +73,7 @@
       ansible.utils.update_fact:
         updates:
         - path: CTASKs
-          value: "{{ item. record.number }}"
+          value: "{{ item.record.number }}"
 
     - name: Print
       ansible.builtin.debug:
