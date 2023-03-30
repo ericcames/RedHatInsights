@@ -78,4 +78,4 @@
 
     - name: Print
       ansible.builtin.debug:
-        var: updated.CTASKs
+        var: updated
