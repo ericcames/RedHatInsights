@@ -61,14 +61,15 @@
         other:
           user_input: "Red Hat Insights Inventory ID: {{ my_insights_inventory_id }}"
 
-    # - name: Update a fact for change ticket task numbers; white space delimited
-    #   loop: "{{ task_numbers_are_here['results'] }}"
-    #   ansible.builtin.set_fact:
-    #     chg_tasks: "{{ chg_tasks + item.record.number }} "
+    - name: Update a fact for change ticket task numbers; white space delimited
+      loop: "{{ task_numbers_are_here['results'] }}"
+      when: item.record exists
+      ansible.builtin.set_fact:
+        chg_tasks: "{{ chg_tasks + item.record.number }} "
     
-    # - name: Print a list of task tickets
-    #   ansible.builtin.debug:
-    #     msg: "{{ chg_tasks }}"
+    - name: Print a list of task tickets
+      ansible.builtin.debug:
+        msg: "{{ chg_tasks }}"
 
     # - name: Update a fact for problem numbers; white space delimited
     #   loop: "{{ problem_numbers_are_here['results'] }}"
