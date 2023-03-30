@@ -4,7 +4,12 @@
     connection: local
     gather_facts: no
     vars:
-      chg_tasks: ''
+      - chg_tasks: ''
+      - chg_tasks_dict: {
+          'number': '',
+          'cveid':  '',
+          'insights_inventory_id': ''
+          }
 
     tasks:
 
@@ -65,3 +70,7 @@
       loop: "{{ (chg_tasks.split()) }}"
       servicenow.itsm.change_request_task_info:
         number: "{{ item }}"
+
+    - name: print out dictionary
+      debug:
+        var: "{{ chg_tasks_dict }}"
