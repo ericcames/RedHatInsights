@@ -42,7 +42,7 @@
         short_description: "vulnerabilities:{{ item.attributes.synopsis }} on Red Hat Insights Inventory ID: {{ my_insights_inventory_id }}"
         description: "{{ item.attributes.description }}"
         on_hold: true
-        hold_reason: "Waiting for Ansible Automation Platform to run the remdiation playbook."
+        hold_reason: "Waiting for Ansible Automation Platform to run the remediation playbook."
         other:
           approval: approved
 
@@ -61,7 +61,7 @@
 
     - name: is this a list?
       ansible.builtin.debug:
-        var: "{{ task_numbers_are_here | type_debug }}"
+        var: "{{ my_cve_list | type_debug }}"
     
 
     # - name: Print out task_numbers_are_here
