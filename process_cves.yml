@@ -67,7 +67,7 @@
     - name: Print out task_numbers_are_here
       loop: "{{ task_numbers_are_here['results'] }}"
       ansible.builtin.debug:
-        var: "{{ item.record.number }}"
+        msg: "{{ item.record.number }}"
 
     # - name: Set a fact for change ticket task numbers
     #   ansible.builtin.set_fact:
