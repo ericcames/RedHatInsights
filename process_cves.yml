@@ -58,23 +58,23 @@
       loop: "{{ task_numbers_are_here['results'] }}"
       when: item.changed != false
       ansible.builtin.set_fact:
-        chg_tasks: "{{ chg_tasks + item.record.number, }}"
+        chg_tasks: "{{ chg_tasks + item.record.number[','] }}"
     
     - name: Print a list of change related task tickets
       ansible.builtin.debug:
         msg: "{{ chg_tasks }}"
     
-    - name: Retrieve change request tasks by number
-      register: task_info_here
-      loop: "{{ chg_tasks }}"
-      servicenow.itsm.change_request_task_info:
-        number: "{{ item }}"
+    # - name: Retrieve change request tasks by number
+    #   register: task_info_here
+    #   loop: "{{ chg_tasks }}"
+    #   servicenow.itsm.change_request_task_info:
+    #     number: "{{ item }}"
 
-    - name: printing printing
-      debug:
-        msg: "{{ task_info_here }}"
+    # - name: printing printing
+    #   debug:
+    #     msg: "{{ task_info_here }}"
 
-    - name: test
-      debug:
-        msg: "{{ chg_tasks | type_debug }}"
-        # msg: "{{ chg_tasks|ansible.builtin.to_json(indent=4, sort_keys=True) }}"
+    # - name: test
+    #   debug:
+    #     msg: "{{ chg_tasks | type_debug }}"
+    #     # msg: "{{ chg_tasks|ansible.builtin.to_json(indent=4, sort_keys=True) }}"
