@@ -66,4 +66,4 @@
     - name: Print out task_numbers_are_here
       loop: "{{ task_numbers_are_here['results'] }}"
       ansible.builtin.debug:
-        msg: "{{ item }}"
+        msg: "{{ item.record.number }}"
