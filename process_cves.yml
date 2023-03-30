@@ -68,7 +68,15 @@
     #   ansible.builtin.debug:
     #     msg: "{{ (chg_tasks_raw.split()) }}"
 
-    - name: Print a list of change related task tickets
+    # - name: Print a list of change related task tickets
+    #   loop: "{{ (chg_tasks_raw.split()) }}"
+    #   ansible.builtin.debug:
+    #     msg: "{{ item }}"
+
+    - name: Retrieve change request tasks by number
+      register: task_info_here
       loop: "{{ (chg_tasks_raw.split()) }}"
-      ansible.builtin.debug:
-        msg: "{{ item }}"
+      servicenow.itsm.change_request_task_info:
+        number: "{{ item }}"
+        query:
+          - short_description:
