@@ -3,6 +3,8 @@
     hosts: localhost
     connection: local
     gather_facts: no
+    vars:
+      chg_tasks: ''
 
     tasks:
 
@@ -69,15 +71,15 @@
     #   ansible.builtin.debug:
     #     msg: "{{ item.record.number }}"
 
-    - name: Set a fact for priming CTASKs
-      ansible.builtin.set_fact:
-        my_tasks:
+    # - name: Set a fact for priming CTASKs
+    #   ansible.builtin.set_fact:
+    #     my_tasks:
 
     - name: Set a fact for change ticket task numbers
       loop: "{{ task_numbers_are_here['results'] }}"
       ansible.builtin.set_fact:
-        CTASKs: "{{ CTASKs }} + {{ my_tasks }}"
+        chg_tasks: "{{ chg_tasks + ['item.record.number'] }}"
     
     - name: Print
       ansible.builtin.debug:
-        msg: CTASKs
+        msg: "{{ chg_tasks }}"
