@@ -71,11 +71,11 @@
       ansible.builtin.debug:
         msg: "{{ chg_tasks }}"
 
-    - name: Update a fact for problem numbers; white space delimited
-      loop: "{{ problem_numbers_are_here['results'] }}"
-      ansible.builtin.set_fact:
-        problem_tickets: "{{ problem_tickets + item.record.number }} "
+    # - name: Update a fact for problem numbers; white space delimited
+    #   loop: "{{ problem_numbers_are_here['results'] }}"
+    #   ansible.builtin.set_fact:
+    #     problem_tickets: "{{ problem_tickets + item.record.number }} "
     
-    - name: Print a list of problem tickets
-      ansible.builtin.debug:
-        msg: "{{ problem_tickets }}"
+    # - name: Print a list of problem tickets
+    #   ansible.builtin.debug:
+    #     msg: "{{ problem_tickets }}"
