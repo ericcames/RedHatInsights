@@ -58,7 +58,7 @@
       loop: "{{ task_numbers_are_here['results'] }}"
       when: item.changed != false
       ansible.builtin.set_fact:
-        chg_tasks_raw: "{{ chg_tasks_raw + [item.record.number] }} "
+        chg_tasks_raw: "{{ chg_tasks_raw + item.record.number }} "
     
     - name: Convert chg_tasks_raw to a white space delimted list
       ansible.builtin.set_fact:
@@ -66,4 +66,4 @@
 
     - name: Print a list of change related task tickets
       ansible.builtin.debug:
-        msg: "{{ chg_tasks_raw }}"
+        msg: "{{ chg_tasks }}"
