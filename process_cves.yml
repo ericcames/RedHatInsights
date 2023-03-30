@@ -64,12 +64,16 @@
       ansible.builtin.debug:
         msg: "{{ chg_tasks }}"
     
-    - name: Retrieve change request tasks by number
-      register: task_info_here
-      loop: "{{ chg_tasks | dict2items }}"
-      servicenow.itsm.change_request_task_info:
-        number: "{{ item }}"
+    # - name: Retrieve change request tasks by number
+    #   register: task_info_here
+    #   loop: "{{ chg_tasks | dict2items }}"
+    #   servicenow.itsm.change_request_task_info:
+    #     number: "{{ item }}"
 
-    - name: printing printing
+    # - name: printing printing
+    #   debug:
+    #     msg: "{{ task_info_here }}"
+
+    - name: test
       debug:
-        msg: "{{ task_info_here }}"
+        msg: "{{ chg_tasks | get_type }}"
