@@ -71,14 +71,11 @@
     #   ansible.builtin.debug:
     #     msg: "{{ item.record.number }}"
 
-    # - name: Set a fact for priming CTASKs
-    #   ansible.builtin.set_fact:
-    #     my_tasks:
 
     - name: Set a fact for change ticket task numbers
       loop: "{{ task_numbers_are_here['results'] }}"
       ansible.builtin.set_fact:
-        chg_tasks: "{{ chg_tasks + item.record.number }}"
+        chg_tasks: "{{ chg_tasks + item.record.number }}:"
     
     - name: Print
       ansible.builtin.debug:
