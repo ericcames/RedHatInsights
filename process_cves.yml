@@ -64,23 +64,16 @@
     #     var: "{{ my_cve_list | type_debug }}"
     
 
-    - name: Print out task_numbers_are_here
-      loop: "{{ task_numbers_are_here['results'] }}"
-      ansible.builtin.debug:
-        msg: "{{ item.record.number }}"
-
-    # - name: Set a fact for change ticket task numbers
-    #   ansible.builtin.set_fact:
-    #     CTASKs:
-    
-    # - name: Update CTASKs with change ticket task numbers for the CVEs
+    # - name: Print out task_numbers_are_here
     #   loop: "{{ task_numbers_are_here['results'] }}"
-    #   register: updated
-    #   ansible.utils.update_fact:
-    #     updates:
-    #     - path: CTASKs
-    #       value: "{{ item.record.number }}"
-
-    # - name: Print
     #   ansible.builtin.debug:
-    #     var: updated
+    #     msg: "{{ item.record.number }}"
+
+    - name: Set a fact for change ticket task numbers
+      loop: "{{ task_numbers_are_here['results'] }}"
+      ansible.builtin.set_fact:
+        CTASKs: "{{ CTASKs + item.record.number }}"
+    
+    - name: Print
+      ansible.builtin.debug:
+        msg: CTASKs
