@@ -70,6 +70,5 @@
     - name: Print out task_info_here
       loop: "{{ task_info_here['results'] }}"
       ansible.builtin.debug:
-        msg: "{{ item.records.number }}
-              {{ item.records.short_description }}"
+        msg: "{{ item.records.task_effective_number }}"
          #msg: "{{ task_info_here }}"
