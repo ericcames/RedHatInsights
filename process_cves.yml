@@ -67,15 +67,15 @@
       servicenow.itsm.change_request_task_info:
         number: "{{ item }}"
 
-    - name: what is this anyway
-      debug:
-        msg: "{{ task_info_here | type_debug }}"
+    # - name: what is this anyway
+    #   debug:
+    #     msg: "{{ task_info_here | type_debug }}"
 
-    - name: print out my dictionary
-      debug:
-        msg: "{{ task_info_here }}"
+    # - name: print out my dictionary
+    #   debug:
+    #     msg: "{{ task_info_here }}"
 
     - name: Print out task_info_here
       loop: "{{ task_info_here['results'] }}"
       ansible.builtin.debug:
-        msg: "{{ item.records }}"
+        msg: "{{ item.value.number }}"
