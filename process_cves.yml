@@ -78,4 +78,4 @@
     - name: Print out task_info_here
       loop: "{{ task_info_here['results'] }}"
       ansible.builtin.debug:
-        msg: "{{ item.value.number }}"
+        msg: "{{ item.records }}"
