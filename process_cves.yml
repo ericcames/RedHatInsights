@@ -76,6 +76,6 @@
     #     msg: "{{ task_info_here }}"
 
     - name: Print out task_info_here
-      loop: "{{ task_info_here['results'] }}"
+      loop: "{{ lookup('ansible.builtin.dict', task_info_here['results']['records']) }}"
       ansible.builtin.debug:
-        msg: "{{ item.records }}"
+        msg: "{{ item.value.number }}"
