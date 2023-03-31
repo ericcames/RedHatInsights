@@ -95,5 +95,6 @@
         msg: "{{ pbm_tkt_dict }}"
 
     - name: printing
+      loop: chg_tkt_dict
       ansible.builtin.debug:
-        var: chg_tkt_dict.number
+        var: item.value.number
