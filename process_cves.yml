@@ -95,4 +95,4 @@
     - name: Create a playbook for each (CVE)
       #loop: "{{ chg_tkt_dict }}"
       ansible.builtin.debug:
-        msg: "{{ chg_tkt_dict.number }}" 
+        msg: "{{ chg_tkt_dict.msg.number }}" 
