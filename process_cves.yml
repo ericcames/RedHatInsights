@@ -4,8 +4,7 @@
     connection: local
     gather_facts: no
     vars:
-      - chg_tasks: ''
-      - chg_tasks_dict: {}
+      chg_tasks: ''
 
     tasks:
 
@@ -67,6 +66,12 @@
       servicenow.itsm.change_request_task_info:
         number: "{{ item }}"
 
+    - name: Create a Change Task Tickets dictionary
+      loop: "{{ task_numbers_are_here['results'] }}"
+      when: item.changed != false
+      ansible.builtin.set_fact:
+        chg_tkt_dict: "{{chg_tkt_dict|default({}) | combine ( {item.record.number : item.record.short_description}) }}"
+
     # - name: what is this anyway
     #   debug:
     #     msg: "{{ task_info_here | type_debug }}"
@@ -75,7 +80,7 @@
     #   debug:
     #     msg: "{{ task_info_here }}"
 
-    - name: Print out task_info_here
-      loop: "{{ task_info_here['results'] }}"
-      ansible.builtin.debug:
-        msg: "{{ item.records }}"
+    # - name: Print out task_info_here
+    #   loop: "{{ task_info_here['results'] }}"
+    #   ansible.builtin.debug:
+    #     msg: "{{ item.records }}"
