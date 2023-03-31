@@ -97,4 +97,4 @@
     - name: Print phone records
       ansible.builtin.debug:
         msg: "User {{ item.key }} is {{ item.value.cve_id }} ({{ item.value.insights_id }})"
-      loop: "{{ lookup('ansible.builtin.dict', chg_tkt_dict) }}"
+      loop: (with_dict: "{{ chg_tkt_dict }}")
