@@ -45,7 +45,7 @@
       when: item.changed != false
       ansible.builtin.set_fact:
         #chg_tkt_dict: "{{chg_tkt_dict|default({}) | combine ( {item.record.number : item.record.short_description}) }}"
-        chg_tkt_dict: "{{chg_tkt_dict|default([]) + [{ 'number' : item.record.number, 
+        chg_tkt_list: "{{chg_tkt_list|default([]) + [{ 'number' : item.record.number, 
                                                        'short_description' : item.record.short_description, 
                                                        'task_sys_id' : item.record.sys_id,
                                                        'change_request_sys_id' : item.record.change_request,
@@ -55,7 +55,7 @@
 
     - name: print out Change Task Tickets dictionary
       ansible.builtin.debug:
-        msg: "{{ chg_tkt_dict }}"
+        msg: "{{ chg_tkt_list }}"
 
     - name: Create problem for each cve without a playbook
       register: problem_numbers_are_here
@@ -75,18 +75,18 @@
       when: item.changed != false
       ansible.builtin.set_fact:
         #pbm_tkt_dict: "{{pbm_tkt_dict|default({}) | combine ( {item.record.number : item.record.short_description}) }}"
-        pbm_tkt_dict: "{{pbm_tkt_dict|default([]) + [{ 'number' : item.record.number, 
+        pbm_tkt_list: "{{pbm_tkt_list|default([]) + [{ 'number' : item.record.number, 
                                                        'short_description' : item.record.short_description, 
                                                        'sys_id' : item.record.sys_id,
                                                        'cmdb_ci' : item.record.user_input }] }}"
 
     - name: print out Problem tickets dictionary
       ansible.builtin.debug:
-        msg: "{{ pbm_tkt_dict }}"
+        msg: "{{ pbm_tkt_list }}"
 
     - name: print
       #loop: "{{ chg_tkt_dict | dict2items }}"
       ansible.builtin.debug:
-        msg: "{{chg_tkt_dict | type_debug}}"
+        msg: "{{chg_tkt_list | type_debug}}"
         
       
