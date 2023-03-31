@@ -67,8 +67,12 @@
       servicenow.itsm.change_request_task_info:
         number: "{{ item }}"
 
-    - name: Print out task_info_here
-      loop: "{{ task_info_here['records'] }}"
-      ansible.builtin.debug:
-        msg: "{{ item.number }}->
-              {{ item.short_description }}"
+    - name: what is this anyway
+      debug:
+        msg: "{{ task_info_here | type_debug }}"
+
+    # - name: Print out task_info_here
+    #   loop: "{{ task_info_here['records'] }}"
+    #   ansible.builtin.debug:
+    #     msg: "{{ item.number }}->
+    #           {{ item.short_description }}"
