@@ -41,7 +41,7 @@
           user_input: "{{ item.attributes.synopsis }}"
 
     - name: Create a Change Task Tickets dictionary
-      loop: "{{ task_numbers_are_here['results'] }}"
+      loop: "{{ task_numbers_are_here['results'].splitlines() }}"
       when: item.changed != false
       ansible.builtin.set_fact:
         #chg_tkt_dict: "{{chg_tkt_dict|default({}) | combine ( {item.record.number : item.record.short_description}) }}"
