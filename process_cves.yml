@@ -94,4 +94,4 @@
     - name: Create a playbook for each task (CVE)
       loop: "{{ chg_tkt_dict }}"
       ansible.builtin.debug:
-        msg: "{{ item.short_description | split(' on Red Hat Insights Inventory ID: ') }}" 
+        msg: "{{ item.short_description | split(' on Red Hat Insights Inventory ID: ' | items2dict) }}" 
