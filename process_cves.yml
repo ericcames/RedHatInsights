@@ -71,6 +71,10 @@
       debug:
         msg: "{{ task_info_here | type_debug }}"
 
+    - name: print out my dictionary
+      debug:
+        msg: "{{ task_info_here }}"
+
     # - name: Print out task_info_here
     #   loop: "{{ task_info_here['records'] }}"
     #   ansible.builtin.debug:
