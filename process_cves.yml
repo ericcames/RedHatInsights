@@ -82,9 +82,10 @@
                                                        'sys_id' : item.record.sys_id, 
                                                        'cmdb_ci' : item.record.user_input }] }}"
         
+
     - name: print out Problem tickets dictionary
       ansible.builtin.debug:
-        msg: "{{ pbm_tkt_list }}"
+        msg: "{{ [0,1]  pbm_tkt_list }}"
 
     - name: print
       ansible.builtin.debug:
