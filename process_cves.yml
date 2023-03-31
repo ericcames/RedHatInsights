@@ -44,11 +44,11 @@
       when: item.changed != false
       ansible.builtin.set_fact:
         #chg_tkt_dict: "{{chg_tkt_dict|default({}) | combine ( {item.record.number : item.record.short_description}) }}"
-        chg_tkt_dict: "{{chg_tkt_dict|default([]) [{ 'number' : item.record.number, 
-                                                     'short_description' : item.record.short_description, 
-                                                     'task_sys_id' : item.record.sys_id,
-                                                     'change_request_sys_id' : item.record.change_request,
-                                                     'cmdb_ci' : item.record.cmdb_ci }] }}"
+        chg_tkt_dict: "{{chg_tkt_dict|default([]) + [{ 'number' : item.record.number, 
+                                                       'short_description' : item.record.short_description, 
+                                                       'task_sys_id' : item.record.sys_id,
+                                                       'change_request_sys_id' : item.record.change_request,
+                                                       'cmdb_ci' : item.record.cmdb_ci }] }}"
 
     - name: print out Change Task Tickets dictionary
       debug:
