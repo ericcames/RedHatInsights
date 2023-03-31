@@ -96,4 +96,4 @@
 
     - name: printing
       ansible.builtin.debug:
-        var: chg_tkt_dict
+        var: chg_tkt_dict.number
