@@ -92,6 +92,6 @@
         msg: "{{ pbm_tkt_dict }}"
 
     - name: Create a playbook for each task (CVE)
-      loop: "{{ chg_tkt_dict }}"
+      loop: "{{ my_cve_dict }}"
       ansible.builtin.debug:
-        msg: "{{ item.short_description | split(' on Red Hat Insights Inventory ID: ' | first) }}" 
+        msg: "{{ item.key) }} {{item.value}}" 
