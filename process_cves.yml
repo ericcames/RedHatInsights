@@ -45,7 +45,7 @@
       ansible.builtin.set_fact:
         my_cve_dict: "{{my_cve_dict|default({}) | combine ( {item.attributes.synopsis : my_insights_inventory_id}) }}"
 
-    - name: print out Change Task Tickets dictionary
+    - name: print out my_cve_dictionary
       ansible.builtin.debug:
         msg: "{{ my_cve_dict }}"
 
