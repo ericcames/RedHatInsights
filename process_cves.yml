@@ -51,7 +51,7 @@
                                                        'cmdb_ci' : item.record.cmdb_ci }] }}"
 
     - name: print out Change Task Tickets dictionary
-      debug:
+      ansible.builtin.debug:
         msg: "{{ chg_tkt_dict }}"
 
     - name: Create problem for each cve without a playbook
@@ -75,5 +75,5 @@
         pbm_tkt_dict: "{{pbm_tkt_dict|default([]) + [{ 'number' : item.record.number, 'short_description' : item.record.short_description, 'sys_id' : item.record.sys_id }] }}"
 
     - name: print out Problem tickets dictionary
-      debug:
+      ansible.builtin.debug:
         msg: "{{ pbm_tkt_dict }}"
