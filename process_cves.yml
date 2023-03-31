@@ -75,8 +75,7 @@
       debug:
         msg: "{{ task_info_here }}"
 
-    # - name: Print out task_info_here
-    #   loop: "{{ task_info_here['records'] }}"
-    #   ansible.builtin.debug:
-    #     msg: "{{ item.number }}->
-    #           {{ item.short_description }}"
+    - name: Print out task_info_here
+      loop: "{{ task_info_here['results'] }}"
+      ansible.builtin.debug:
+        msg: "{{ item }}"
