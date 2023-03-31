@@ -88,6 +88,5 @@
 
     - name: print
       ansible.builtin.debug:
-        msg: "{{pbm_tkt_list | type_debug}}"
-        
+        msg: "{{pbm_tkt_list | items2dict | type_debug}}"     
       
