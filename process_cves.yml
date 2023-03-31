@@ -93,3 +93,7 @@
     - name: print out Problem tickets dictionary
       ansible.builtin.debug:
         msg: "{{ pbm_tkt_dict }}"
+
+    - name: printing
+      ansible.builtin.debug:
+        var: chg_tkt_dict
