@@ -74,7 +74,8 @@
         #pbm_tkt_dict: "{{pbm_tkt_dict|default({}) | combine ( {item.record.number : item.record.short_description}) }}"
         pbm_tkt_dict: "{{pbm_tkt_dict|default([]) + [{ 'number' : item.record.number, 
                                                        'short_description' : item.record.short_description, 
-                                                       'sys_id' : item.record.sys_id }] }}"
+                                                       'sys_id' : item.record.sys_id,
+                                                       'cmdb_ci' : item.record.user_input }] }}"
 
     - name: print out Problem tickets dictionary
       ansible.builtin.debug:
