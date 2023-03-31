@@ -83,3 +83,9 @@
     - name: print out Problem tickets dictionary
       ansible.builtin.debug:
         msg: "{{ pbm_tkt_dict }}"
+
+    - name: hello
+      loop: "{{ lookup('dict', chg_tkt_dict) }}"
+      ansible.builtin.debug:
+        msg: "{{ item.key }}"
+      
