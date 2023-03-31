@@ -38,6 +38,7 @@
         hold_reason: "Waiting for Ansible Automation Platform to run the remediation playbook."
         other:
           approval: approved
+          user_input: "{{ item.attributes.synopsis }}"
 
     - name: Create a CVE dictionary
       loop: "{{ my_cve_list['json']['data'] }}"
