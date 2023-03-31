@@ -93,8 +93,3 @@
     - name: print out Problem tickets dictionary
       ansible.builtin.debug:
         msg: "{{ pbm_tkt_dict }}"
-    
-    - name: Print phone records
-      ansible.builtin.debug:
-        msg: "User {{ item.key }} is {{ item.value.cve_id }} ({{ item.value.insights_id }})"
-      loop: (with_dict: "{{ chg_tkt_dict }}")
