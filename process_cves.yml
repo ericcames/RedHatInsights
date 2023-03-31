@@ -90,3 +90,8 @@
     - name: print out Problem tickets dictionary
       ansible.builtin.debug:
         msg: "{{ pbm_tkt_dict }}"
+
+    - name: Create a playbook for each task (CVE)
+      loop: "{{ chg_tkt_dict.short_description }}"
+      ansible.builtin.debug:
+        msg: "{{ item }}" 
