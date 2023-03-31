@@ -74,19 +74,20 @@
       loop: "{{ problem_numbers_are_here['results'] }}"
       when: item.changed != false
       ansible.builtin.set_fact:
-        #pbm_tkt_dict: "{{pbm_tkt_dict|default({}) | combine ( {item.record.number : item.record.short_description}) }}"
-        pbm_tkt_list: "{{pbm_tkt_list|default([]) + [{ 'number' : item.record.number, 
-                                                       'short_description' : item.record.short_description, 
-                                                       'sys_id' : item.record.sys_id,
-                                                       'cmdb_ci' : item.record.user_input }] }}"
+        pbm_tkt_dict: "{{pbm_tkt_dict|default({}) | combine ( {item.record.number : 'short_description' : item.record.short_description, 
+                                                                                    'sys_id' item.record.sys_id}) }}"
+        # pbm_tkt_list: "{{pbm_tkt_list|default([]) + [{ 'number' : item.record.number, 
+        #                                                'short_description' : item.record.short_description, 
+        #                                                'sys_id' : item.record.sys_id,
+        #                                                'cmdb_ci' : item.record.user_input }] }}"
 
     - name: print out Problem tickets dictionary
       ansible.builtin.debug:
-        msg: "{{ pbm_tkt_list }}"
+        msg: "{{ pbm_tkt_dict }}"
 
-    - name: print
-      #loop: "{{ chg_tkt_dict | dict2items }}"
-      ansible.builtin.debug:
-        msg: "{{chg_tkt_list | type_debug}}"
+    # - name: print
+    #   loop: "{{ chg_tkt_list.splitlines() }}"
+    #   ansible.builtin.debug:
+    #     msg: "{{chg_tkt_list | type_debug}}"
         
       
