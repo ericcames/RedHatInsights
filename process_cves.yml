@@ -77,5 +77,6 @@
 
     - name: Print out task_info_here
       loop: "{{ lookup('ansible.builtin.dict', task_info_here) }}"
+      when: item.key == "results"
       ansible.builtin.debug:
         msg: "{{ item }}"
