@@ -58,7 +58,8 @@
                                                        'short_description' : item.record.short_description, 
                                                        'task_sys_id' : item.record.sys_id,
                                                        'change_request_sys_id' : item.record.change_request,
-                                                       'cmdb_ci' : item.record.cmdb_ci }] }}"
+                                                       'cmdb_ci' : item.record.cmdb_ci,
+                                                       'insights_id' : my_insights_inventory_id }] }}"
 
     - name: print out Change Task Tickets dictionary
       ansible.builtin.debug:
@@ -91,7 +92,7 @@
       ansible.builtin.debug:
         msg: "{{ pbm_tkt_dict }}"
 
-    - name: Create a playbook for each task (CVE)
-      loop: "{{ lookup('ansible.builtin.dict', my_cve_dict) }}"
+    - name: Create a playbook for each (CVE)
+      loop: "{{ lookup('ansible.builtin.dict', chg_tkt_dict) }}"
       ansible.builtin.debug:
         msg: "{{ item.key }} {{ item.value }}" 
