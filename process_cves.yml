@@ -93,9 +93,8 @@
     - name: print out Problem tickets dictionary
       ansible.builtin.debug:
         msg: "{{ pbm_tkt_dict }}"
-
-    - name: Find account information method 1
-      debug:
-        msg: "CVE ID: {{ item.value.cve_id }} "        
-      loop: "{{ lookup('dict', chg_tkt_dict) }}"
-      #when: "env in item.key"
+    
+    - name: Print phone records
+      ansible.builtin.debug:
+        msg: "User {{ item.key }} is {{ item.value.cve_id }} ({{ item.value.insights_id }})"
+      loop: "{{ lookup('ansible.builtin.dict', chg_tkt_dict) }}"
