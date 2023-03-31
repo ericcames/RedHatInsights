@@ -85,9 +85,8 @@
       ansible.builtin.debug:
         msg: "{{ pbm_tkt_list }}"
 
-    # - name: print
-    #   loop: "{{ chg_tkt_list.splitlines() }}"
-    #   ansible.builtin.debug:
-    #     msg: "{{chg_tkt_list | type_debug}}"
+    - name: print
+      ansible.builtin.debug:
+        msg: "{{pbm_tkt_list | type_debug}}"
         
       
