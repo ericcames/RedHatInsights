@@ -93,6 +93,6 @@
         msg: "{{ pbm_tkt_dict }}"
 
     - name: Create a playbook for each (CVE)
-      loop: "{{ lookup('ansible.builtin.dict', chg_tkt_dict) }}"
+      loop: "{{ chg_tkt_dict }}"
       ansible.builtin.debug:
         msg: "{{ item.key }} {{ item.value }}" 
