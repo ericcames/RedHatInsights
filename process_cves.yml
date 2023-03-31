@@ -60,7 +60,7 @@
         impact: medium
         urgency: low
         other:
-          user_input: "Red Hat Insights Inventory ID: {{ my_insights_inventory_id }}"
+          user_input: "{{ my_server }}"
 
     - name: Create a Problem tickets dictionary
       loop: "{{ problem_numbers_are_here['results'] }}"
