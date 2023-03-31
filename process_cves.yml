@@ -3,9 +3,7 @@
     hosts: localhost
     connection: local
     gather_facts: no
-    vars:
-      chg_tasks: ''
-
+    
     tasks:
 
     - name: Get my list of CVEs
@@ -54,17 +52,17 @@
         other:
           user_input: "Red Hat Insights Inventory ID: {{ my_insights_inventory_id }}"
 
-    - name: Update a fact for change ticket task numbers; white space delimited
-      loop: "{{ task_numbers_are_here['results'] }}"
-      when: item.changed != false
-      ansible.builtin.set_fact:
-        chg_tasks: "{{ chg_tasks + item.record.number }} "
+    # - name: Update a fact for change ticket task numbers; white space delimited
+    #   loop: "{{ task_numbers_are_here['results'] }}"
+    #   when: item.changed != false
+    #   ansible.builtin.set_fact:
+    #     chg_tasks: "{{ chg_tasks + item.record.number }} "
     
-    - name: Retrieve change request tasks by number
-      register: task_info_here
-      loop: "{{ (chg_tasks.split()) }}"
-      servicenow.itsm.change_request_task_info:
-        number: "{{ item }}"
+    # - name: Retrieve change request tasks by number
+    #   register: task_info_here
+    #   loop: "{{ (chg_tasks.split()) }}"
+    #   servicenow.itsm.change_request_task_info:
+    #     number: "{{ item }}"
 
     - name: Create a Change Task Tickets dictionary
       loop: "{{ task_numbers_are_here['results'] }}"
@@ -72,15 +70,6 @@
       ansible.builtin.set_fact:
         chg_tkt_dict: "{{chg_tkt_dict|default({}) | combine ( {item.record.number : item.record.short_description}) }}"
 
-    # - name: what is this anyway
-    #   debug:
-    #     msg: "{{ task_info_here | type_debug }}"
-
-    # - name: print out my dictionary
-    #   debug:
-    #     msg: "{{ task_info_here }}"
-
-    # - name: Print out task_info_here
-    #   loop: "{{ task_info_here['results'] }}"
-    #   ansible.builtin.debug:
-    #     msg: "{{ item.records }}"
+    - name: print out my dictionary
+      debug:
+        msg: "{{ chg_tkt_dict }}"
