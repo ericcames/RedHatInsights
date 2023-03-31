@@ -84,8 +84,9 @@
       ansible.builtin.debug:
         msg: "{{ pbm_tkt_dict }}"
 
-    - name: hello
-      loop: "{{ lookup('dict', chg_tkt_dict) }}"
+    - name: print
+      loop: "{{ chg_tkt_dict | dict2items }}"
       ansible.builtin.debug:
-        msg: "{{ item.key }}"
+        msg: "{{item}}"
+        
       
