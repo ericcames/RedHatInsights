@@ -60,7 +60,8 @@
                                                        'task_sys_id' : item.record.sys_id,
                                                        'change_request_sys_id' : item.record.change_request,
                                                        'cmdb_ci' : item.record.cmdb_ci,
-                                                       'insights_id' : my_insights_inventory_id }] }}"
+                                                       'insights_id' : my_insights_inventory_id,
+                                                       'cve_id' : item.record.user_input }] }}"
 
     - name: print out Change Task Tickets dictionary
       ansible.builtin.debug:
