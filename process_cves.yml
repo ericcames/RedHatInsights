@@ -77,9 +77,11 @@
         #pbm_tkt_list: "{{ pbm_tkt_list | default({}) | combine ({ item.key : item.value}) }}"
         # pbm_tkt_dict: "{{pbm_tkt_dict|default({}) | combine ( {item.record.number : 'short_description' : item.record.short_description, 
         #                                                                             'sys_id' item.record.sys_id}) }}"
-        pbm_tkt_list: "{{pbm_tkt_list|default([]) + [{ 'number' : item.record.number, 'short_description' : item.record.short_description, 'sys_id' : item.record.sys_id, 'cmdb_ci' : item.record.user_input }] }}"
+        pbm_tkt_list: "{{pbm_tkt_list|default([]) + [{ 'number' : item.record.number, 
+                                                       'short_description' : item.record.short_description, 
+                                                       'sys_id' : item.record.sys_id, 
+                                                       'cmdb_ci' : item.record.user_input }] }}"
         
-
     - name: print out Problem tickets dictionary
       ansible.builtin.debug:
         msg: "{{ pbm_tkt_list }}"
