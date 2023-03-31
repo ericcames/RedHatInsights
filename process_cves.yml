@@ -68,7 +68,7 @@
         number: "{{ item }}"
 
     - name: Print out task_info_here
-      loop: "{{ task_info_here['results']['records'] }}"
+      loop: "{{ task_info_here['records'] }}"
       ansible.builtin.debug:
         msg: "{{ item.number }}->
               {{ item.short_description }}"
