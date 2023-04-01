@@ -122,4 +122,10 @@
         dest: "{{ local_repo }}"
         accept_hostkey: yes
         force: yes
+
+    - name: Write the playbooks to the local_repo
+      loop: "{{ my_playbooks['results'] }}"
+      ansible.builtin.copy:
+        dest: "{{ local_repo }}/{{item.number}}"
+        content: "{{ item.content | to_nice_yaml }}"
     
