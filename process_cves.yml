@@ -106,3 +106,7 @@
           Connection: "keep-alive"
         body_format: json
         body: "{{ lookup('ansible.builtin.template','templates/playbook_generator_body.j2') }}"
+
+    - name: print my_playbooks
+      ansible.builtin.debug:
+        msg: "{{ my_playbooks }}"
