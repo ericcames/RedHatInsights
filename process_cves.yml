@@ -111,3 +111,15 @@
       loop: "{{ my_playbooks['results'] }}"
       ansible.builtin.debug:
         msg: "{{ item.content | to_nice_yaml }}"
+
+    - name: Clone the software repository
+      delegate_to: 127.0.0.1
+      register: clone_result
+      run_once: true
+      when: software_repository is defined
+      ansible.builtin.git:
+      repo: "{{ software_repository }}"
+      dest: "{{ local_repo }}"
+      accept_hostkey: yes
+      force: yes
+    
