@@ -84,8 +84,9 @@
         
 
     - name: print out Problem tickets dictionary
+      loop: "{{ pbm_tkt_list[*] }}"
       ansible.builtin.debug:
-        msg: "{{ pbm_tkt_list[0].number }}"
+        msg: "{{ item.number }}"
 
     - name: print
       ansible.builtin.debug:
