@@ -40,11 +40,10 @@
           approval: approved
           user_input: "{{ item.attributes.synopsis }}"
 
-    - name: Create a Change Task Tickets dictionary
+    - name: Create a Change Task tickets list
       loop: "{{ task_numbers_are_here['results'] }}"
       when: item.changed != false
-      ansible.builtin.set_fact:
-        #chg_tkt_dict: "{{chg_tkt_dict|default({}) | combine ( {item.record.number : item.record.short_description}) }}"
+      ansible.builtin.set_fact:        
         chg_tkt_list: "{{chg_tkt_list|default([]) + [{ 'number' : item.record.number, 
                                                        'short_description' : item.record.short_description, 
                                                        'task_sys_id' : item.record.sys_id,
@@ -53,7 +52,7 @@
                                                        'insights_id' : my_insights_inventory_id,
                                                        'cve_id' : item.record.user_input }] }}"
 
-    - name: print out Change Task Tickets dictionary
+    - name: print out Change Task Tickets list
       ansible.builtin.debug:
         msg: "{{ chg_tkt_list }}"
 
@@ -70,25 +69,37 @@
         other:
           user_input: "{{ my_server }}"
 
-    - name: Create a Problem tickets dictionary
+    - name: Create a Problem tickets list
       loop: "{{ problem_numbers_are_here['results'] }}"
       when: item.changed != false
       ansible.builtin.set_fact:
-        #pbm_tkt_list: "{{ pbm_tkt_list | default({}) | combine ({ item.key : item.value}) }}"
-        # pbm_tkt_dict: "{{pbm_tkt_dict|default({}) | combine ( {item.record.number : 'short_description' : item.record.short_description, 
-        #                                                                             'sys_id' item.record.sys_id}) }}"
         pbm_tkt_list: "{{pbm_tkt_list|default([]) + [{ 'number' : item.record.number, 
                                                        'short_description' : item.record.short_description, 
                                                        'sys_id' : item.record.sys_id, 
                                                        'cmdb_ci' : item.record.user_input }] }}"
         
 
-    - name: print out Problem tickets dictionary
-      loop: "{{ pbm_tkt_list }}"
-      ansible.builtin.debug:
-        msg: "{{ item.number }}"
+    # - name: print out Problem tickets list
+    #   loop: "{{ pbm_tkt_list }}"
+    #   ansible.builtin.debug:
+    #     msg: "{{ item.number }}"
 
-    - name: print
-      ansible.builtin.debug:
-        msg: "{{pbm_tkt_list | type_debug}}"     
-      
+    #  - name: print
+    #   ansible.builtin.debug:
+    #     msg: "{{pbm_tkt_list | type_debug}}"
+
+    - name: Generate playbooks to remediate vulnerabilities
+      register: my_playbooks
+      loop: "{{ chg_tkt_list }}"
+      ansible.builtin.uri:
+        url: "https://cloud.redhat.com/api/remediations/v1/playbook"
+        method: POST
+        user: "{{ insights_username }}"
+        password: "{{ insights_password }}"
+        validate_certs: no
+        force_basic_auth: yes
+        status_code: 200
+        return_content: yes 
+        headers:
+          Content-Type: "application/json"
+        body: "{{ lookup('ansible.builtin.template,'template/playbook_generator_body.j2') }}"
