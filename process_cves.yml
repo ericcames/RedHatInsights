@@ -77,16 +77,6 @@
                                                        'short_description' : item.record.short_description, 
                                                        'sys_id' : item.record.sys_id, 
                                                        'cmdb_ci' : item.record.user_input }] }}"
-        
-
-    # - name: print out Problem tickets list
-    #   loop: "{{ pbm_tkt_list }}"
-    #   ansible.builtin.debug:
-    #     msg: "{{ item.number }}"
-
-    #  - name: print
-    #   ansible.builtin.debug:
-    #     msg: "{{pbm_tkt_list | type_debug}}"
 
     - name: Generate playbooks to remediate vulnerabilities
       register: my_playbooks
@@ -129,7 +119,7 @@
         dest: "{{ local_repo }}/{{ item.x_rh_insights_request_id }}"
         content: "{{ item.content | to_nice_yaml }}"
 
-  - block:
+    - block:
     - name: Add any new playbooks to the software_repository
       delegate_to: localhost
       changed_when: False
@@ -138,7 +128,6 @@
         args:
           chdir: "{{ software_repository }}"
         
-
     - name: Get the status of the repository
       register: status_results
       changed_when: False
@@ -170,4 +159,3 @@
       ansible.builtin.shell: "git push"
         args:
           chdir: "{{ software_repository }}"
-    
