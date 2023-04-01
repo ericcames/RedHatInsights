@@ -126,6 +126,6 @@
     - name: Write the playbooks to the local_repo
       loop: "{{ my_playbooks['results'] }}"
       ansible.builtin.copy:
-        dest: "{{ local_repo }}/{{item.number}}"
+        dest: "{{ local_repo }}/{{item.issues.id}}"
         content: "{{ item.content | to_nice_yaml }}"
     
