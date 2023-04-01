@@ -1,9 +1,9 @@
 {
   "issues": [
     {
-      "id": "vulnerabilities:{{ cve_id }}",
+      "id": "vulnerabilities:{{ item.cve_id }}",
       "systems": [
-        "{{ my_insights_inventory_id }}"
+        "{{ item.insights_id }}"
       ]
     },
   ],
