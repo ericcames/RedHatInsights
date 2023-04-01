@@ -108,5 +108,6 @@
         body: "{{ lookup('ansible.builtin.template','templates/playbook_generator_body.j2') }}"
 
     - name: print my_playbooks
+      loop: "{{ my_playbooks['results'] }}"
       ansible.builtin.debug:
-        msg: "{{ my_playbooks }}"
+        msg: "{{ item.content }}"
