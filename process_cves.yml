@@ -104,5 +104,5 @@
           Content-Type: "application/json"
           accept: "text/vnd.yaml"
           Connection: "keep-alive"
-        body_format: raw
+        body_format: json
         body: "{{ lookup('ansible.builtin.template','templates/playbook_generator_body.j2') }}"
