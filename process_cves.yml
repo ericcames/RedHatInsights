@@ -118,8 +118,8 @@
       run_once: true
       when: software_repository is defined
       ansible.builtin.git:
-      repo: "{{ software_repository }}"
-      dest: "{{ local_repo }}"
-      accept_hostkey: yes
-      force: yes
+        repo: "{{ software_repository }}"
+        dest: "{{ local_repo }}"
+        accept_hostkey: yes
+        force: yes
     
