@@ -116,7 +116,7 @@
     - name: Write the playbooks to the local_repo
       loop: "{{ my_playbooks['results'] }}"
       ansible.builtin.copy:
-        dest: "{{ local_repo }}/{{ item.x_rh_insights_request_id }}"
+        dest: "{{ local_repo }}/{{ item.x_rh_insights_request_id }}.yml"
         content: "{{ item.content | to_nice_yaml }}"
 
     - name: Add any new playbooks to the software_repository
