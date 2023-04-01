@@ -101,6 +101,8 @@
         status_code: 200
         return_content: yes 
         headers:
-          Content-Type: "text/vnd.yaml; charset=utf-8"
+          Content-Type: "application/json"
+          accept: "text/vnd.yaml"
+          Connection: "keep-alive"
         body_format: raw
         body: "{{ lookup('ansible.builtin.template','templates/playbook_generator_body.j2') }}"
