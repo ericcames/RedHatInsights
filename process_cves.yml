@@ -102,4 +102,4 @@
         return_content: yes 
         headers:
           Content-Type: "application/json"
-        body: "{{ lookup('ansible.builtin.template','template/playbook_generator_body.j2') }}"
+        body: "{{ lookup('ansible.builtin.template','templates/playbook_generator_body.j2') }}"
