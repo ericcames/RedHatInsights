@@ -110,4 +110,4 @@
     - name: print my_playbooks
       loop: "{{ my_playbooks['results'] }}"
       ansible.builtin.debug:
-        msg: "{{ item.content }}"
+        var: "{{ item.content }}"
