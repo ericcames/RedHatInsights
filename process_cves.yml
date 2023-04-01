@@ -85,7 +85,7 @@
 
     - name: print out Problem tickets dictionary
       ansible.builtin.debug:
-        msg: "{{ [0,1]  pbm_tkt_list }}"
+        msg: "{{ pbm_tkt_list[0] }}"
 
     - name: print
       ansible.builtin.debug:
