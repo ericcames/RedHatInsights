@@ -109,7 +109,7 @@
         state: "in_progress"
         number: "{{ item.item.number }}"
         other:
-          work_notes: "{{ item.content }}"
+          work_notes: "{{ item.content | ansible.builtin.regexp(my_private_dns_name, my_server) }}"
 
     - name: Clone the software repository
       delegate_to: 127.0.0.1
