@@ -100,7 +100,7 @@
     - name: print my_playbooks
       loop: "{{ my_playbooks['results'] }}"
       ansible.builtin.debug:
-        msg: "{{ item.content | to_nice_yaml | split('\n') }}"
+        msg: "{{ item.content | to_nice_yaml | ansible.builtin.split('\n') }}"
 
     # - name: Clone the software repository
     #   delegate_to: 127.0.0.1
