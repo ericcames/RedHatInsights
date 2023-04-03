@@ -100,7 +100,7 @@
     - name: print my_playbooks
       loop: "{{ my_playbooks['results'] }}"
       ansible.builtin.debug:
-        msg: "{{ item.content.split('\n') }} {{item.number}}"
+        msg: "{{ item.content.split('\n') }}"
 
     # - name: Clone the software repository
     #   delegate_to: 127.0.0.1
