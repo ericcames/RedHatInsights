@@ -117,7 +117,7 @@
       loop: "{{ my_playbooks['results'] }}"
       ansible.builtin.copy:
         dest: "{{ local_repo }}/{{ item.x_rh_insights_request_id }}.yml"
-        content: "{{ item.content | to_nice_yaml }}"
+        content: "{{ item.content.split('\n') }}"
 
     - name: Add any new playbooks to the software_repository
       delegate_to: localhost
