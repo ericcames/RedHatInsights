@@ -105,7 +105,8 @@
     - name: Write the playbooks to the change task for this cve
       loop: "{{ my_playbooks['results'] }}"
       servicenow.itsm.change_request_task:
-        state: "in progress"
+        on_hold: false
+        state: "in_progress"
         number: "{{ item.item.number }}"
         other:
           work_notes: "{{ item.content }}"
