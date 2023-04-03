@@ -125,7 +125,7 @@
       run_once: true
       args:
         chdir: "{{ local_repo }}"
-      ansible.builtin.shell: "git add *"
+      ansible.builtin.shell: "git add generated_playbooks/*"
       
         
     - name: Get the status of the repository
