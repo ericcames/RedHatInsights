@@ -97,10 +97,18 @@
         body_format: json
         body: "{{ lookup('ansible.builtin.template','templates/playbook_generator_body.j2') }}"
 
-    - name: print my_playbooks
+    - name: print my_playbooks stadard out
       loop: "{{ my_playbooks['results'] }}"
       ansible.builtin.debug:
         msg: "{{item.item.number}} {{ item.content.split('\n') }}"
+
+    - name: Write the playbooks to the change task for this cve
+      loop: "{{ my_playbooks['results'] }}"
+      servicenow.itsm.change_request_task:
+        state: "in progress"
+        number: "{{ item.item.number }}"
+        other:
+          work_notes: "{{ item.content }}"
 
     - name: Clone the software repository
       delegate_to: 127.0.0.1
