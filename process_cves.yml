@@ -100,7 +100,7 @@
     - name: print my_playbooks
       loop: "{{ my_playbooks['results'] }}"
       ansible.builtin.debug:
-        msg: "{{ item.content.split('\n') }}"
+        msg: "{{ item.content.split('\n') }} {{ item.item.number }}"
 
     # - name: Clone the software repository
     #   delegate_to: 127.0.0.1
@@ -113,11 +113,11 @@
     #     accept_hostkey: yes
     #     force: yes
 
-    - name: Write the playbooks to the local_repo
-      loop: "{{ my_playbooks['results'] }}"
-      ansible.builtin.copy:
-        dest: "{{ local_repo }}/{{ item.x_rh_insights_request_id }}.yml"
-        content: "{{ item.content }}"
+    # - name: Write the playbooks to the local_repo
+    #   loop: "{{ my_playbooks['results'] }}"
+    #   ansible.builtin.copy:
+    #     dest: "{{ local_repo }}/{{ item.x_rh_insights_request_id }}.yml"
+    #     content: "{{ item.content }}"
 
     # - name: Add any new playbooks to the software_repository
     #   delegate_to: localhost
