@@ -62,8 +62,6 @@
       when: item.attributes.remediation != 2
       servicenow.itsm.problem:
         state: new
-        assignment_group: "Ansible West Tigers"
-        assigned_to: "hercules"
         short_description: "Red Hat Insights vulnerabilities:{{ item.attributes.synopsis }} there is no available Ansible Playbook :-0"
         description: "{{ item.attributes.description }}"
         impact: medium
