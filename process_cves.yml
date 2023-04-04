@@ -68,6 +68,7 @@
         urgency: low
         other:
           user_input: "{{ my_server }}"
+          cmdb_ci: "{{ my_server }}"
 
     - name: Create a Problem tickets list
       loop: "{{ problem_numbers_are_here['results'] }}"
