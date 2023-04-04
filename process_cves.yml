@@ -111,6 +111,11 @@
         other:
           work_notes: "{{ item.content }}"
 
+    - name: Make my_change_task_number_list available to future job change_request_number
+      ansible.builtin.set_stats:
+        data:
+          change_task_numbers: "{{ my_playbooks }}"
+
     - name: Clone the software repository
       delegate_to: 127.0.0.1
       register: clone_result
@@ -173,14 +178,3 @@
       args:
         chdir: "{{ local_repo }}"
       ansible.builtin.shell: "git push"
-
-    - name: Save off my list of change task numbers
-      register: my_change_task_number_list
-      loop: "{{ chg_tkt_list }}"
-      ansible.builtin.set_fact:
-        my_change_task_number_list: "{{ my_change_task_number_list |default([]) + [{ 'number' : item.record.number }] }}"
-
-    - name: Make my_change_task_number_list available to future job change_request_number
-      ansible.builtin.set_stats:
-        data:
-          change_task_numbers: "{{ my_change_task_number_list }}"
