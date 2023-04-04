@@ -179,4 +179,4 @@
       loop: "{{ chg_tkt_list }}"
       ansible.builtin.set_stats:
         data: 
-          my_change_task_number_list: "{{ my_change_task_number_list |default([]) + [{ 'number' : item.record.number }] }}"
+          my_change_task_number_list: "{{ my_change_task_number_list |default([]) + [{ item.record.number }] }}"
