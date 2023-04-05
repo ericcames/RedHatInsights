@@ -52,6 +52,23 @@
     body: "{{ lookup('ansible.builtin.template','templates/job_template_body_default.j2') }}"
     status_code: 200
 
+- name: Checking the status of my job before moving on to the next playbook
+  register: my_job_status
+  ansible.builtin.uri:
+    url: "https://{{ controller_url }}/api/v2/jobs/{{ my_job_info.json.id }}"
+    method: GET
+    headers:
+      Authorization: "Bearer {{ new_token.json.token }}"
+      Content-Type: "application/json"
+    validate_certs: no
+    follow_redirects: all
+    return_content: no
+    status_code: 200
+
+- name: print job status
+  debug:
+    msg: "{{ my_job_status.json.status }}"
+
 - name: Pausing for 60 seconds between iterations
   ansible.builtin.pause:
     seconds: 60
