@@ -213,7 +213,5 @@
 
     - name: process my playbooks
       loop: "{{ chg_tkt_list }}"
-      loop_control:
-        pause: 90
       ansible.builtin.include_tasks:
         file: tasks/launch_playbooks.yml

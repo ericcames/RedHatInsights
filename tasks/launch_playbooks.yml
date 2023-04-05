@@ -54,4 +54,8 @@
     body: "{{ lookup('ansible.builtin.template','templates/job_template_body_default.j2') }}"
     status_code: 200
 
+- name: Pausing for 10 seconds to allow for the project up to finish
+  ansible.builtin.pause:
+    seconds: 60
+
 #- name: Delete playbook from repository
