@@ -195,14 +195,14 @@
       #   ansible.builtin.debug: 
       #     msg: "{{ new_token.json.token }}"
 
-      - name: Kick off a project sync
-        ansible.builtin.uri:
-          url: "https://{{ controller_url }}/api/v2/projects/{{ project_id }}/update/"
-          headers:
-            Authorization: "Bearer {{ new_token.json.token }}"
-            Content-Type: "application/json"
-          validate_certs: no
-          follow_redirects: all
-          return_content: no
-          method: "POST"
-          status_code: 202
+    - name: Kick off a project sync
+      ansible.builtin.uri:
+        url: "https://{{ controller_url }}/api/v2/projects/{{ project_id }}/update/"
+        headers:
+          Authorization: "Bearer {{ new_token.json.token }}"
+          Content-Type: "application/json"
+        validate_certs: no
+        follow_redirects: all
+        return_content: no
+        method: "POST"
+        status_code: 202
