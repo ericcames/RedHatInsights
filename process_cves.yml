@@ -206,6 +206,10 @@
         return_content: no
         method: "POST"
         status_code: 202
+    
+    - name: Pausing for 10 seconds to allow for the project up to finish
+      ansible.builtin.pause:
+        seconds: 10
 
     - name: process my playbooks
       loop: "{{ chg_tkt_list }}"
