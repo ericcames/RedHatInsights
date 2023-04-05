@@ -56,8 +56,8 @@
   register: my_job_status
   until: "'successful' in my_job_status.json.status"
   ignore_errors: yes
-  retries: 10
-  delay: 30
+  retries: 20
+  delay: 20
   ansible.builtin.uri:
     url: "https://{{ controller_url }}/api/v2/jobs/{{ my_job_info.json.id }}"
     method: GET
