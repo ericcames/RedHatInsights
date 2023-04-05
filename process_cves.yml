@@ -206,3 +206,8 @@
         return_content: no
         method: "POST"
         status_code: 202
+
+    - name: process my playbooks
+      loop: "{{ chg_tkt_list }}"
+      ansible.builtin.include_tasks:
+        task_list.yml
