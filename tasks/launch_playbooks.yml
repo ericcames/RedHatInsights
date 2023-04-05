@@ -30,7 +30,7 @@
   debug:
     msg: "{{ my_job_info.json.id }}"
 
-- name: Update the change task ticket 
+- name: "Update the status for ticket {{ item.number }} to In Progress"  
   servicenow.itsm.change_request_task:
     on_hold: false
     state: "in_progress"
@@ -73,7 +73,7 @@
   debug:
     msg: "{{ my_job_status.json.status }}"
 
-- name: Update the change task ticket 
+- name: "Closing task {{ item.number }}" 
   servicenow.itsm.change_request_task:
     state: closed
     number: "{{ item.number }}"
