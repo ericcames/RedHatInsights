@@ -1,0 +1,662 @@
+{
+    "data": [
+        {
+            "attributes": {
+                "advisories_list": [],
+                "advisory_available": false,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "6.500",
+                "description": "Microprocessors use a ‘load port’ subcomponent to perform load operations from memory or IO. During a load operation, the load port receives data from the memory or IO subsystem and then provides the data to the CPU registers and operations in the CPU’s pipelines. Stale load operations results are stored in the 'load port' table until overwritten by newer operations. Certain load-port operations triggered by an attacker can be used to reveal data about previous stale requests leaking data back to the attacker via a timing side-channel.",
+                "first_reported": "2023-04-05T14:14:36.883691+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2019-05-14T17:00:00+00:00",
+                "remediation": 2,
+                "reporter": 2,
+                "rule": {
+                    "change_risk": 3,
+                    "description": "\"MDS\": CPU side-channel reported by kernel",
+                    "generate_autoplaybook": true,
+                    "kbase_node_id": 4134081,
+                    "playbook_count": 1,
+                    "reboot_required": true,
+                    "rule_id": "CVE_2018_12130_cpu_kernel|CVE_2018_12130_CPU_KERNEL_VULNERABLE_2",
+                    "summary": "The kernel reports this system is vulnerable.\n"
+                },
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2018-12127"
+            },
+            "id": "CVE-2018-12127",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [],
+                "advisory_available": false,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "6.200",
+                "description": "A flaw was found in the implementation of the \"fill buffer\", a mechanism used by modern CPUs when a cache-miss is made on L1 CPU cache. If an attacker can generate a load operation that would create a page fault, the execution will continue speculatively with incorrect data from the fill buffer while the data is fetched from higher level caches. This response time can be measured to infer data in the fill buffer.",
+                "first_reported": "2023-04-05T14:14:36.883691+00:00",
+                "impact": "Important",
+                "known_exploit": false,
+                "public_date": "2019-05-14T17:00:00+00:00",
+                "remediation": 2,
+                "reporter": 2,
+                "rule": {
+                    "change_risk": 3,
+                    "description": "\"MDS\": CPU side-channel reported by kernel",
+                    "generate_autoplaybook": true,
+                    "kbase_node_id": 4134081,
+                    "playbook_count": 1,
+                    "reboot_required": true,
+                    "rule_id": "CVE_2018_12130_cpu_kernel|CVE_2018_12130_CPU_KERNEL_VULNERABLE_2",
+                    "summary": "The kernel reports this system is vulnerable.\n"
+                },
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2018-12130"
+            },
+            "id": "CVE-2018-12130",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [],
+                "advisory_available": false,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "6.500",
+                "description": "Modern Intel microprocessors implement hardware-level micro-optimizations to improve the performance of writing data back to CPU caches. The write operation is split into STA (STore Address) and STD (STore Data) sub-operations. These sub-operations allow the processor to hand-off address generation logic into these sub-operations for optimized writes. Both of these sub-operations write to a shared distributed processor structure called the 'processor store buffer'. As a result, an unprivileged attacker could use this flaw to read private data resident within the CPU's processor store buffer.",
+                "first_reported": "2023-04-05T14:14:36.883691+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2019-05-14T17:00:00+00:00",
+                "remediation": 2,
+                "reporter": 2,
+                "rule": {
+                    "change_risk": 3,
+                    "description": "\"MDS\": CPU side-channel reported by kernel",
+                    "generate_autoplaybook": true,
+                    "kbase_node_id": 4134081,
+                    "playbook_count": 1,
+                    "reboot_required": true,
+                    "rule_id": "CVE_2018_12130_cpu_kernel|CVE_2018_12130_CPU_KERNEL_VULNERABLE_2",
+                    "summary": "The kernel reports this system is vulnerable.\n"
+                },
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2018-12126"
+            },
+            "id": "CVE-2018-12126",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [],
+                "advisory_available": false,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "3.800",
+                "description": "Uncacheable memory on some microprocessors utilizing speculative execution may allow an authenticated user to potentially enable information disclosure via a side channel with local access.",
+                "first_reported": "2023-04-05T14:14:36.883691+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2019-05-14T17:00:00+00:00",
+                "remediation": 2,
+                "reporter": 2,
+                "rule": {
+                    "change_risk": 3,
+                    "description": "\"MDS\": CPU side-channel reported by kernel",
+                    "generate_autoplaybook": true,
+                    "kbase_node_id": 4134081,
+                    "playbook_count": 1,
+                    "reboot_required": true,
+                    "rule_id": "CVE_2018_12130_cpu_kernel|CVE_2018_12130_CPU_KERNEL_VULNERABLE_2",
+                    "summary": "The kernel reports this system is vulnerable.\n"
+                },
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2019-11091"
+            },
+            "id": "CVE-2019-11091",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [],
+                "advisory_available": false,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "5.600",
+                "description": "An industry-wide issue was found in the way many modern microprocessor designs have implemented speculative execution of Load & Store instructions (a commonly used performance optimization). It relies on the presence of a precisely-defined instruction sequence in the privileged code as well as the fact that memory read from address to which a recent memory write has occurred may see an older value and subsequently cause an update into the microprocessor's data cache even for speculatively executed instructions that never actually commit (retire). As a result, an unprivileged attacker could use this flaw to read privileged memory by conducting targeted cache side-channel attacks.",
+                "first_reported": "2023-04-05T14:14:36.883691+00:00",
+                "impact": "Important",
+                "known_exploit": false,
+                "public_date": "2018-05-21T21:00:00+00:00",
+                "remediation": 1,
+                "reporter": 2,
+                "rule": {
+                    "change_risk": 3,
+                    "description": "\"SSBD\": CPU side-channel with outdated microcode",
+                    "generate_autoplaybook": true,
+                    "kbase_node_id": 3448801,
+                    "playbook_count": 0,
+                    "reboot_required": true,
+                    "rule_id": "CVE_2018_3639_cpu_kernel|CVE_2018_3639_CPU_BAD_MICROCODE_2",
+                    "summary": "Vulnerable microcode is installed.\n"
+                },
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2018-3639"
+            },
+            "id": "CVE-2018-3639",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5319"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "7.300",
+                "description": "A flaw was found in vim, where it is vulnerable to a heap buffer overflow in the vim_strncpy find_word function. This flaw allows a specially crafted file to crash software, modify memory and possibly perform remote execution when opened in vim.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2022-05-10T00:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2022-1621"
+            },
+            "id": "CVE-2022-1621",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5319"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "7.800",
+                "description": "A flaw was found in vim, where it is vulnerable to a buffer over-read in the find_next_quote function. This flaw allows a specially crafted file to crash software, modify memory and possibly perform remote execution when opened in vim.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2022-05-10T00:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2022-1629"
+            },
+            "id": "CVE-2022-1629",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5809"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "7.500",
+                "description": "An out-of-bounds read vulnerability was discovered in the PCRE2 library in the compile_xclass_matchingpath() function of the  pcre2_jit_compile.c file. This involves a unicode property matching issue in JIT-compiled regular expressions. The issue occurs because the character was not fully read in case-less matching within JIT.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2022-03-23T00:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2022-1586"
+            },
+            "id": "CVE-2022-1586",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5314"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "6.500",
+                "description": "A flaw was found in expat. A stack exhaustion in doctype parsing could be triggered by a file with a large number of opening braces, resulting in a denial of service.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2022-02-19T00:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2022-25313"
+            },
+            "id": "CVE-2022-25313",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5314"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "7.500",
+                "description": "An integer overflow flaw was found in expat. This issue affects the encoding name parameter at the parser creation time, which is often hard-coded (rather than user input), takes a value in the gigabytes to trigger, and on a 64-bit machine. This flaw can cause a denial of service.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2022-02-19T00:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2022-25314"
+            },
+            "id": "CVE-2022-25314",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5317"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "7.400",
+                "description": "A flaw was found in the libxml2 library in functions used to manipulate the xmlBuf and the xmlBuffer types. A substantial input causes values to calculate buffer sizes to overflow, resulting in an out-of-bounds write.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2022-05-03T00:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2022-29824"
+            },
+            "id": "CVE-2022-29824",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5313"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "8.100",
+                "description": "A vulnerability was found in curl. This security flaw allows reusing OAUTH2-authenticated connections without properly ensuring that the connection was authenticated with the same credentials set for this transfer. This issue leads to an authentication bypass, either by mistake or by a malicious actor.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2022-04-27T06:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2022-22576"
+            },
+            "id": "CVE-2022-22576",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5313"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "5.000",
+                "description": "A vulnerability was found in curl. This security flaw allows leaking credentials to other servers when it follows redirects from auth-protected HTTP(S) URLs to other protocols and port numbers.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2022-04-27T06:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2022-27774"
+            },
+            "id": "CVE-2022-27774",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5313"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "4.300",
+                "description": "A vulnerability was found in curl. This security flaw allows leak authentication or cookie header data on HTTP redirects to the same host but another port number. Sending the same set of headers to a server on a different port number is a problem for applications that pass on custom `Authorization:` or `Cookie:`headers. Those headers often contain privacy-sensitive information or data.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2022-04-27T00:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2022-27776"
+            },
+            "id": "CVE-2022-27776",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5313"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "7.500",
+                "description": "A vulnerability was found in curl. This issue occurs because curl can reuse a previously created connection even when a TLS or SSH-related option is changed that should have prohibited reuse. This flaw leads to an authentication bypass, either by mistake or by a malicious actor.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2022-05-11T00:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2022-27782"
+            },
+            "id": "CVE-2022-27782",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5311"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "5.900",
+                "description": "A flaw was found in libgcrypt's ElGamal implementation, where it allows plain text recovery. During the interaction between two cryptographic libraries, a certain combination of the prime defined by the receiver's public key, the generator defined by the receiver's public key, and the sender's ephemeral exponents can lead to a cross-configuration attack against OpenPGP. The highest threat from this vulnerability is to confidentiality.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2021-07-20T00:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2021-40528"
+            },
+            "id": "CVE-2021-40528",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5818"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "6.700",
+                "description": "A flaw was found in OpenSSL. The `c_rehash` script does not properly sanitize shell meta-characters to prevent command injection. Some operating systems distribute this script in a manner where it is automatically executed. This flaw allows an attacker to execute arbitrary commands with the privileges of the script on these operating systems.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2022-05-03T00:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2022-1292"
+            },
+            "id": "CVE-2022-1292",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5813"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "7.300",
+                "description": "A flaw was found in vim. The vulnerability occurs due to Illegal memory access and leads to an out-of-bounds write vulnerability in the ex_cmds function. This flaw allows an attacker to input a specially crafted file, leading to a crash or code execution.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2022-05-19T00:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2022-1785"
+            },
+            "id": "CVE-2022-1785",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5813"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "7.800",
+                "description": "A flaw was found in vim. The vulnerability occurs due to Illegal memory access and leads to an out-of-bounds write vulnerability in the vim_regsub_both function. This flaw allows an attacker to input a specially crafted file, leading to a crash or code execution.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2022-05-25T00:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2022-1897"
+            },
+            "id": "CVE-2022-1897",
+            "type": "cve"
+        },
+        {
+            "attributes": {
+                "advisories_list": [
+                    "RHSA-2022:5813"
+                ],
+                "advisory_available": true,
+                "business_risk": "Not Defined",
+                "business_risk_id": 0,
+                "business_risk_text": null,
+                "cve_status_id": 0,
+                "cve_status_text": null,
+                "cvss2_score": null,
+                "cvss3_score": "7.800",
+                "description": "A flaw was found in vim. The vulnerability occurs due to Illegal memory access and leads to a buffer over-read vulnerability in the utf_ptr2char function. This flaw allows an attacker to input a specially crafted file, leading to a crash or code execution.",
+                "first_reported": "2023-04-05T14:14:36.230307+00:00",
+                "impact": "Moderate",
+                "known_exploit": false,
+                "public_date": "2022-05-22T00:00:00+00:00",
+                "remediation": 2,
+                "reporter": 1,
+                "rule": null,
+                "status": "Not Reviewed",
+                "status_id": 0,
+                "status_text": null,
+                "synopsis": "CVE-2022-1927"
+            },
+            "id": "CVE-2022-1927",
+            "type": "cve"
+        }
+    ],
+    "links": {
+        "first": "/api/vulnerability/v1/systems/3e841dfd-9c67-4358-bc19-566f784c623c/cves?offset=0&limit=20&data_format=json",
+        "last": "/api/vulnerability/v1/systems/3e841dfd-9c67-4358-bc19-566f784c623c/cves?offset=60&limit=20&data_format=json",
+        "next": "/api/vulnerability/v1/systems/3e841dfd-9c67-4358-bc19-566f784c623c/cves?offset=20&limit=20&data_format=json",
+        "previous": null
+    },
+    "meta": {
+        "advisory": null,
+        "advisory_available": null,
+        "business_risk_id": null,
+        "cvss_from": null,
+        "cvss_to": null,
+        "data_format": "json",
+        "filter": null,
+        "first_reported_from": null,
+        "first_reported_to": null,
+        "impact": null,
+        "known_exploit": null,
+        "limit": 20,
+        "offset": 0,
+        "page": 1,
+        "page_size": 20,
+        "pages": 4,
+        "patch_access": true,
+        "permissions": [
+            "inventory:*:*",
+            "remediations:remediation:read",
+            "remediations:remediation:write",
+            "vulnerability:*:*",
+            "remediations:*:write",
+            "inventory:*:read",
+            "remediations:*:read"
+        ],
+        "public_from": null,
+        "public_to": null,
+        "remediation": null,
+        "rule_key": null,
+        "rule_presence": null,
+        "show_advisories": null,
+        "sort": null,
+        "status_id": null,
+        "total_items": 79
+    }
+}
