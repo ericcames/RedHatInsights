@@ -30,10 +30,10 @@
     on_hold: false
     state: "closed"
     number: "{{ item.number }}"
+    close_code: "successful"
+    close_notes: "hoo-yah"
     other:
       work_notes: "all done"
-      close_code: "successful"
-      close_notes: "hoo-yah"
 
 - name: Update job template back to default playbook
   ansible.builtin.uri:
