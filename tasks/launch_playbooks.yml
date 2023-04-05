@@ -14,6 +14,7 @@
     status_code: 200
 
 - name: Run job template
+  register: my_job_info
   ansible.builtin.uri:
     url: "https://{{ controller_url }}/api/v2/job_templates/165/launch/"
     method: POST
@@ -24,6 +25,10 @@
     follow_redirects: all
     return_content: no
     status_code: 201
+
+  - name: print job id
+    debug:
+      msg: "{{ my_job_info.josn.id }}"
 
 # - name: Update the change task ticket 
 #   servicenow.itsm.change_request_task:
