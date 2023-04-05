@@ -28,7 +28,7 @@
 
 - name: print job id
   debug:
-    msg: "{{ my_job_info.josn.id }}"
+    msg: "{{ my_job_info.json.id }}"
 
 # - name: Update the change task ticket 
 #   servicenow.itsm.change_request_task:
