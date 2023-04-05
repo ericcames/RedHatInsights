@@ -80,8 +80,8 @@
     number: "{{ item.number }}"
     closed_code: "successful"
     closed_notes: "AAP Job ID: {{ my_job_info.json.id }} finished with a status of: {{ my_job_status.json.status }}"
-    other:
-      work_notes: "Completed AAP Job ID: {{ my_job_info.json.id }}"
+    # other:
+    #   work_notes: "Completed AAP Job ID: {{ my_job_info.json.id }}"
 
 # - name: Pausing for 60 seconds between iterations
 #   ansible.builtin.pause:
