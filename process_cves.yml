@@ -111,10 +111,10 @@
         other:
           work_notes: "{{ item.content }}"
 
-    - name: Make my_change_task_number_list available to future job change_request_number
-      ansible.builtin.set_stats:
-        data:
-          change_task_numbers: "{{ my_playbooks }}"
+    # - name: Make my_change_task_number_list available to future job change_request_number
+    #   ansible.builtin.set_stats:
+    #     data:
+    #       change_task_numbers: "{{ my_playbooks }}"
 
     - name: Clone the software repository
       delegate_to: 127.0.0.1
@@ -178,3 +178,31 @@
       args:
         chdir: "{{ local_repo }}"
       ansible.builtin.shell: "git push"
+
+    - name: Get an AAP API Token and store it as new_token
+      register: new_token
+      ansible.builtin.uri:
+        url: "https://{{ controller_url }}/api/v2/tokens/"
+        method: POST
+        user: "{{ username }}"
+        password: "{{ password }}"
+        validate_certs: no
+        force_basic_auth: yes
+        status_code: 201
+        return_content: yes       
+        
+      # - name: Print out the new token
+      #   ansible.builtin.debug: 
+      #     msg: "{{ new_token.json.token }}"
+
+      - name: Kick off a project sync
+        ansible.builtin.uri:
+          url: "https://{{ controller_url }}/api/v2/projects/{{ inventory_id }}/update/"
+          headers:
+            Authorization: "Bearer {{ new_token.json.token }}"
+            Content-Type: "application/json"
+          validate_certs: no
+          follow_redirects: all
+          return_content: no
+          method: "POST"
+          status_code: 202
