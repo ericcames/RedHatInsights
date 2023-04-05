@@ -30,15 +30,13 @@
   debug:
     msg: "{{ my_job_info.json.id }}"
 
-# - name: Update the change task ticket 
-#   servicenow.itsm.change_request_task:
-#     on_hold: false
-#     state: "closed"
-#     number: "{{ item.number }}"
-#     close_code: "successful"
-#     close_notes: "hoo-yah"
-#     other:
-#       work_notes: "all done"
+- name: Update the change task ticket 
+  servicenow.itsm.change_request_task:
+    on_hold: false
+    state: ""in_progress""
+    number: "{{ item.number }}"
+    other:
+      work_notes: "Launched AAP Job ID: {{ my_job_info.json.id }}"
 
 - name: Update job template back to default playbook
   ansible.builtin.uri:
@@ -54,7 +52,7 @@
     body: "{{ lookup('ansible.builtin.template','templates/job_template_body_default.j2') }}"
     status_code: 200
 
-- name: Pausing for 10 seconds to allow for the project up to finish
+- name: Pausing for 60 seconds between iterations
   ansible.builtin.pause:
     seconds: 60
 
