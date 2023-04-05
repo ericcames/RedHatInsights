@@ -47,4 +47,4 @@
     body: "{{ lookup('ansible.builtin.template','templates/job_template_body_default.j2') }}"
     status_code: 200
 
-- name: Delete playbook from repository
+#- name: Delete playbook from repository
