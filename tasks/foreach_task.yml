@@ -1,0 +1,43 @@
+---
+- name: "Update job template for template id {{ project_id }}"
+  ansible.builtin.uri:
+        url: "https://{{ controller_url }}/api/v2/job_templates/165/?name=Insights%20CVE%20T1000%20%22The%20Remediator%22"
+        method: PATCH
+        headers:
+          Authorization: "Bearer {{ new_token.json.token }}"
+          Content-Type: "application/json"
+        validate_certs: no
+        follow_redirects: all
+        return_content: no
+        body_format: json
+        body: "{{ lookup('ansible.builtin.template','templates/job_template_body.j2') }}"
+        status_code: 200
+
+- name: Run job template
+  ansible.builtin.uri:
+        url: "https://{{ controller_url }}/api/v2/job_templates/165/launch/"
+        method: POST
+        headers:
+          Authorization: "Bearer {{ new_token.json.token }}"
+          Content-Type: "application/json"
+        validate_certs: no
+        follow_redirects: all
+        return_content: no
+        status_code: 201
+
+- name: Update the change task ticket 
+- name: Update job template back to default playbook
+  ansible.builtin.uri:
+        url: "https://{{ controller_url }}/api/v2/job_templates/165/?name=Insights%20CVE%20T1000%20%22The%20Remediator%22"
+        method: PATCH
+        headers:
+          Authorization: "Bearer {{ new_token.json.token }}"
+          Content-Type: "application/json"
+        validate_certs: no
+        follow_redirects: all
+        return_content: no
+        body_format: json
+        body: "{{ lookup('ansible.builtin.template','templates/job_template_body_default.j2') }}"
+        status_code: 200
+
+- name: Delete playbook
