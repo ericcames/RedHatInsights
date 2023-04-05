@@ -209,7 +209,7 @@
     
     - name: Pausing for 10 seconds to allow for the project sync up to finish
       ansible.builtin.pause:
-        seconds: 10
+        seconds: 20
 
     - name: process my playbooks
       loop: "{{ chg_tkt_list }}"
