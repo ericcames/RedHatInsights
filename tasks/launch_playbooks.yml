@@ -1,5 +1,5 @@
 ---
-- name: "Update job template for template id {{ project_id }}"
+- name: "Update job template for template id {{ project_id }} with the following playbook {{ item.number }}.yml"
   ansible.builtin.uri:
     url: "https://{{ controller_url }}/api/v2/job_templates/165/?name=Insights%20CVE%20T1000%20\"The%20Remediator\""
     method: PATCH
@@ -26,10 +26,6 @@
     return_content: no
     status_code: 201
 
-- name: print job id
-  debug:
-    msg: "{{ my_job_info.json.id }}"
-
 - name: "Update the status for ticket {{ item.number }} to In Progress"  
   servicenow.itsm.change_request_task:
     on_hold: false
@@ -52,7 +48,7 @@
     body: "{{ lookup('ansible.builtin.template','templates/job_template_body_default.j2') }}"
     status_code: 200
 
-- name: Checking the status of my job before moving on to the next playbook
+- name: "Checking the status of job id: {{ my_job_info.json.id }} before moving on to the next playbook"
   register: my_job_status
   until: "'successful' in my_job_status.json.status"
   ignore_errors: yes
@@ -69,10 +65,6 @@
     return_content: no
     status_code: 200
 
-- name: print job status
-  debug:
-    msg: "{{ my_job_status.json.status }}"
-
 - name: "Closing task {{ item.number }}" 
   servicenow.itsm.change_request_task:
     state: closed
@@ -81,9 +73,3 @@
     close_notes: "AAP Job ID: {{ my_job_info.json.id }} finished with a status of: {{ my_job_status.json.status }}"
     other:
       work_notes: "Completed AAP Job ID: {{ my_job_info.json.id }}"
-
-# - name: Pausing for 60 seconds between iterations
-#   ansible.builtin.pause:
-#     seconds: 60
-
-#- name: Delete playbook from repository
