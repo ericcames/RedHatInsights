@@ -33,7 +33,7 @@
 - name: Update the change task ticket 
   servicenow.itsm.change_request_task:
     on_hold: false
-    state: ""in_progress""
+    state: "in_progress"
     number: "{{ item.number }}"
     other:
       work_notes: "Launched AAP Job ID: {{ my_job_info.json.id }}"
