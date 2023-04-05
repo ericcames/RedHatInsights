@@ -210,4 +210,4 @@
     - name: process my playbooks
       loop: "{{ chg_tkt_list }}"
       ansible.builtin.include_tasks:
-        file: task_list.yml
+        file: tasks/task_list.yml
