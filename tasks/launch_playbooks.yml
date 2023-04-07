@@ -78,10 +78,10 @@
     return_content: no
     status_code: 200
 
-- name: print job_related_events
-  loop: "{{ job_related_events['results'] }}"
-  ansible.builtin.debug:
-    msg: "{{item}}"
+# - name: print job_related_events
+#   loop: "{{ job_related_events['results'] }}"
+#   ansible.builtin.debug:
+#     msg: "{{item}}"
 
 - name: "Closing task {{ item.number }}" 
   servicenow.itsm.change_request_task:
