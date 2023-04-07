@@ -65,6 +65,24 @@
     return_content: no
     status_code: 200
 
+- name: "Get job related events for job id: {{ my_job_info.json.id }}"
+  register: job_related_events
+  ansible.builtin.uri:
+    url: "https://{{ controller_url }}/api/v2/jobs/{{ my_job_info.json.id }}/job_events/"
+    method: GET
+    headers:
+      Authorization: "Bearer {{ new_token.json.token }}"
+      Content-Type: "application/json"
+    validate_certs: no
+    follow_redirects: all
+    return_content: no
+    status_code: 200
+
+- name: print job_related_events
+  loop: "{{ job_related_events['results'] }}"
+  ansible.builtin.debug:
+    msg: "{{item}}"
+
 - name: "Closing task {{ item.number }}" 
   servicenow.itsm.change_request_task:
     state: closed
