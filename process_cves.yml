@@ -10,7 +10,7 @@
       register: my_cve_list
       ignore_errors: true
       ansible.builtin.uri:
-        url: "https://console.redhat.com/api/vulnerability/v1/systems/{{ my_insights_inventory_id }}/cves"
+        url: "https://console.redhat.com/api/vulnerability/v1/systems/{{ my_insights_inventory_id }}/cves?limit=200"
         method: GET
         user: "{{ insights_username }}"
         password: "{{ insights_password }}"
