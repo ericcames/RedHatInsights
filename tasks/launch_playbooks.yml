@@ -1,7 +1,7 @@
 ---
 - name: "Update job template for template id {{ project_id }} with the following playbook {{ item.number }}.yml"
   ansible.builtin.uri:
-    url: "https://{{ controller_url }}/api/v2/job_templates/165/?name=Insights%20CVE%20T1000%20\"The%20Remediator\""
+    url: "https://{{ controller_url }}/api/v2/job_templates/165/?name=Insights%20CVE%20R1000%20\"The%20Remediator\""
     method: PATCH
     headers:
       Authorization: "Bearer {{ new_token.json.token }}"
