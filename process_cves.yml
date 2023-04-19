@@ -8,7 +8,7 @@
 
     - name: Get my list of CVEs
       register: my_cve_list
-      until: "'200' in my_cve_list.json.status"
+      until: "'200' in my_cve_list.status"
       ignore_errors: true
       retries: 40
       delay: 10
