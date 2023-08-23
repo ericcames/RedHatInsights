@@ -18,3 +18,6 @@
 
 **Red Hat Insights API Documentation**  
 - [Insights API Documentation](https://console.redhat.com/docs/api-docs "Insights API Documentation")
+
+**Red Hat Issue Router**  
+- [Red Hat Issue Router]( https://access.redhat.com/labs/rhir/?product=Red%20Hat%20Insights "Red Hat Issue Router")
