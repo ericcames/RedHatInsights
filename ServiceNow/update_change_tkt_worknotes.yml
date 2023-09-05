@@ -2,9 +2,9 @@
 - name: Update the change ticket work notes
   hosts: localhost
   gather_facts: no
-  
-  tasks: 
-  
+
+  tasks:
+
     - name: Retrieve change ticket sys_id
       register: chg_sys_id
       servicenow.itsm.api_info:
