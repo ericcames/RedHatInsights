@@ -1,7 +1,7 @@
 ---
 - name: "Update job template for template id {{ project_id }} with the following playbook {{ item.number }}.yml"
   ansible.builtin.uri:
-    url: "https://{{ controller_url }}/api/v2/job_templates/165/?name=Insights%20CVE%20R1000%20\"The%20Remediator\""
+    url: "https://{{ controller_url }}/api/v2/job_templates/{{ job_template_id }}/?name=Insights%20CVE%20R1000%20\"The%20Remediator\""
     method: PATCH
     headers:
       Authorization: "Bearer {{ new_token.json.token }}"
@@ -16,7 +16,7 @@
 - name: Run job template
   register: my_job_info
   ansible.builtin.uri:
-    url: "https://{{ controller_url }}/api/v2/job_templates/165/launch/"
+    url: "https://{{ controller_url }}/api/v2/job_templates/{{ job_template_id }}/launch/"
     method: POST
     headers:
       Authorization: "Bearer {{ new_token.json.token }}"
@@ -36,7 +36,7 @@
 
 - name: Update job template back to default playbook
   ansible.builtin.uri:
-    url: "https://{{ controller_url }}/api/v2/job_templates/165/?name=Insights%20CVE%20R1000%20\"The%20Remediator\""
+    url: "https://{{ controller_url }}/api/v2/job_templates/{{ job_template_id }}/?name=Insights%20CVE%20R1000%20\"The%20Remediator\""
     method: PATCH
     headers:
       Authorization: "Bearer {{ new_token.json.token }}"
