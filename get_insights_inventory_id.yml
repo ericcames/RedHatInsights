@@ -9,7 +9,7 @@
     - name: Get my list
       register: my_host_list
       ignore_errors: true
-      until: "my_host_list.count > 0"
+      until: "my_host_list.json.count > 0"
       retries: 40
       delay: 10
       ansible.builtin.uri:
